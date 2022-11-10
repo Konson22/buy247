@@ -1,0 +1,148 @@
+
+.header-container{
+    padding: 0 4%;
+    margin-top: .5rem;
+    .header-hero{
+        height:22.5rem;
+        flex:1;
+        background-image: url('../../../assets/images/adem-ay-Tk9m_HP4rgQ-unsplash.jpg');
+        background-size: 100% 100%;
+    }
+    &__category{
+        margin-left: .5rem;
+        flex-basis: 42%;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(3, 1fr);
+        .category-card{
+            height: 11rem;
+            border-radius: 6px;
+            color: var(--white);
+            background-color: var(--dark);
+            background-size: cover;
+            text-decoration: none;
+            span{
+                padding: .5rem;
+                width: 100%;
+                font-size: 1.2rem;
+                background-color: rgba(0, 0, 0, 0.39);
+            }
+        }
+    }
+}
+
+
+.features-container{
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+    background-color: var(--gray);
+    .features-card{
+        margin: 0;
+        padding: 0 1.5rem;
+        &__text-wraper{
+            margin-left:1rem;
+            flex:1;
+        }
+        &__icon{
+            font-size: 5rem;
+            color:var(--main);
+        }
+    }
+}
+
+
+.app-content{
+    
+    .app-body{
+        flex:1;
+    }
+}
+
+.special-items-sidebar{
+    margin-right: 1.5rem;
+    flex-basis: 25%;
+    .sidebar-secion{
+        margin-bottom: 1rem;
+        background-color: var(--gray);
+        &__header{
+            padding: .5rem 1rem;
+            background-color: var(--main);
+        }
+        
+        &__content{
+            padding: 1rem;
+        }
+        .item-box{
+            margin-bottom: 1rem;
+            &__image{
+                min-width:120px;
+                max-width:120px;
+                min-height:120px;
+                max-height:120px;
+            }
+            &__text{
+                padding: 1rem;
+                flex:1;
+            }
+        }
+    }
+    &__content{
+        .item-box{
+            width:100%;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+@media screen and (max-width:750px){
+    
+    .header-container{
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        .header-hero{
+            height:14rem;
+            min-height:14rem;
+        }
+        &__category{
+            margin: .5rem;
+            .category-card{
+                height: 6rem;
+                span{
+                    padding: .5rem;
+                    font-size: .9rem;
+                    background-color: rgba(0, 0, 0, 0.39);
+                }
+            }
+        }
+    }
+    
+
+    .features-container{
+        padding: .5rem;
+        margin: 0;
+        background-color: var(--gray);
+        .features-card{
+            padding: 0 .5rem;
+            flex-direction: column;
+            &__text-wraper{
+                margin-left:.5rem;
+            }
+            &__icon{
+                font-size: 2rem;
+                color:var(--main);
+            }
+        }
+    }
+
+    .app-content{
+        .app-body{
+            flex:1;
+        }
+    }
+    .special-items-sidebar{
+        display:none;
+    }
+}

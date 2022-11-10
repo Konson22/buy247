@@ -1,0 +1,132 @@
+.header-container {
+  padding: 0 4%;
+  margin-top: 0.5rem;
+}
+.header-container .header-hero {
+  height: 22.5rem;
+  flex: 1;
+  background-image: url("../../../assets/images/adem-ay-Tk9m_HP4rgQ-unsplash.jpg");
+  background-size: 100% 100%;
+}
+.header-container__category {
+  margin-left: 0.5rem;
+  flex-basis: 42%;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+.header-container__category .category-card {
+  height: 11rem;
+  border-radius: 6px;
+  color: var(--white);
+  background-color: var(--dark);
+  background-size: cover;
+  text-decoration: none;
+}
+.header-container__category .category-card span {
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+.features-container {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  background-color: var(--gray);
+}
+.features-container .features-card {
+  margin: 0;
+  padding: 0 1.5rem;
+}
+.features-container .features-card__text-wraper {
+  margin-left: 1rem;
+  flex: 1;
+}
+.features-container .features-card__icon {
+  font-size: 5rem;
+  color: var(--main);
+}
+
+.app-content .app-body {
+  flex: 1;
+}
+
+.special-items-sidebar {
+  margin-right: 1.5rem;
+  flex-basis: 25%;
+}
+.special-items-sidebar .sidebar-secion {
+  margin-bottom: 1rem;
+  background-color: var(--gray);
+}
+.special-items-sidebar .sidebar-secion__header {
+  padding: 0.5rem 1rem;
+  background-color: var(--main);
+}
+.special-items-sidebar .sidebar-secion__content {
+  padding: 1rem;
+}
+.special-items-sidebar .sidebar-secion .item-box {
+  margin-bottom: 1rem;
+}
+.special-items-sidebar .sidebar-secion .item-box__image {
+  min-width: 120px;
+  max-width: 120px;
+  min-height: 120px;
+  max-height: 120px;
+}
+.special-items-sidebar .sidebar-secion .item-box__text {
+  padding: 1rem;
+  flex: 1;
+}
+.special-items-sidebar__content .item-box {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 750px) {
+  .header-container {
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+  }
+  .header-container .header-hero {
+    height: 14rem;
+    min-height: 14rem;
+  }
+  .header-container__category {
+    margin: 0.5rem;
+  }
+  .header-container__category .category-card {
+    height: 6rem;
+  }
+  .header-container__category .category-card span {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: rgba(0, 0, 0, 0.39);
+  }
+  .features-container {
+    padding: 0.5rem;
+    margin: 0;
+    background-color: var(--gray);
+  }
+  .features-container .features-card {
+    padding: 0 0.5rem;
+    flex-direction: column;
+  }
+  .features-container .features-card__text-wraper {
+    margin-left: 0.5rem;
+  }
+  .features-container .features-card__icon {
+    font-size: 2rem;
+    color: var(--main);
+  }
+  .app-content .app-body {
+    flex: 1;
+  }
+  .special-items-sidebar {
+    display: none;
+  }
+}/*# sourceMappingURL=main.css.map */
