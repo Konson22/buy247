@@ -1,4 +1,4 @@
-
+import products from '../assets/products.json'
 import React, { useState, useContext, createContext, useEffect } from 'react'
 import axios from 'axios'
 // import axiosInstance from '../helpers/axiosInstance'
@@ -14,7 +14,7 @@ export default function ItemsContextProvider({children}) {
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState(products)
     
   useEffect(() => {
     const controller = new AbortController();
@@ -22,8 +22,8 @@ export default function ItemsContextProvider({children}) {
     async function fetchItems(){
       setLoading(true)
       try{
-        const results = await axios('https://dummyjson.com/products').then(res => res)
-        // const results = await axios('http://localhost:3001/items').then(res => res)
+        // const results = await axios('https://dummyjson.com/products').then(res => res)
+        const results = await axios('http://localhost:3001/items').then(res => res)
         isMuted && setItems(results.data)
         // isMuted && setItems(results.data.products)
       }catch(error){
