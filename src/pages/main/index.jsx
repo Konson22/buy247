@@ -1,10 +1,10 @@
 import { useItems } from "../../contexts/ItemsContextProvider"
-import { FaHandshake, FaUser } from 'react-icons/fa'
+import { FaHandshake, FaArrowRight, FaUser } from 'react-icons/fa'
 import Items from "../../components/Items"
 import Header from "./Header";
+import { Link } from 'react-router-dom'
+import Shopps from "../../components/Shopps";
 import './css/main.css'
-import { Heading1, Heading2 } from "../../components/HeadingTitles";
-import { LazyImage } from "../../helpers/LazyImage";
 
 export default function MainPage(){
 
@@ -44,12 +44,23 @@ export default function MainPage(){
                     </div>
                 </div>
                 <div className="app-content d-flex">
-                    <SpecialItems />
+                    <Shopps />
                     <div className="app-body">
-                        <Heading1 text='New arrival items' />
-                        {loading && 'Loading...'}
-                        {(!loading && errors) && 'error occures!'}
-                        {(!loading && items.length >= 1 ) && <Items items={items} col='col4' /> }
+                        <div className="app-body__section">
+                            <h2>New arrival items</h2>
+                            {loading && 'Loading...'}
+                            {(!loading && errors) && 'error occures!'}
+                            {(!loading && items.length >= 1 ) && <Items items={items.slice(1,9)} col='col4' /> }
+                            <div className="text-center mt-4">
+                                <Link className='btn btn-primary' to='/items/all'>View more <FaArrowRight /></Link>
+                            </div>
+                        </div>
+                        <div className="ads__section">
+                            <h2>New items</h2>
+                        </div>
+                        <div className="app-body__section">
+                            <h2>New items</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -58,35 +69,3 @@ export default function MainPage(){
     )
 }
 
-
-export function SpecialItems(){
-
-    const { loading, items } = useItems()
-
-    return(
-        <div className="special-items-sidebar">
-            <div className="sidebar-secion">
-                <div className="sidebar-secion__header">
-                    <h3 className='m-0 text-white'>Special items</h3>
-                </div>
-                <div className="sidebar-secion__content">
-                    {(!loading && items.length >= 1 ) && items.map(item => (
-                        <div className='item-box d-flex' key={item.id}>
-                            <div className="item-box__image">
-                                {/* <LazyImage className='' src={item.thumbnail} alt='' /> */}
-                                <LazyImage className='' src='http://localhost:3001/uploads/1654708064726.jpg' alt='' />
-                            </div>
-                            <div className="item-box__text">
-                                <h5>{item.title}</h5>
-                                <p className='elips-text l2'>{item.description}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="sidebar__content">
-                <Heading2 text='Special items' />
-            </div>
-        </div>
-    )
-}

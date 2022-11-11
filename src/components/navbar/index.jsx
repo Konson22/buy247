@@ -55,8 +55,8 @@ export function Navbar(){
                     </ul>
                 </div>
                 <div className="auth-user-buttons">
-                    <button className='btn bg-white btn-sm mx-2' onClick={() => setShowForm(true)}>Start salling</button>
-                    <button className='btn bg-white btn-sm'><FaUser /> Login | Sign up</button>
+                    <button className='btn bg-white btn-sm mx-2' onClick={() => setShowForm('upload')}>Start salling</button>
+                    <button className='btn bg-white btn-sm' onClick={() => setShowForm('login')}><FaUser /> Login | Sign up</button>
                 </div>
             </div>
         </nav>

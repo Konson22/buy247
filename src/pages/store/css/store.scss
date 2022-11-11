@@ -22,8 +22,7 @@
     grid-gap: 1rem;
     grid-template-columns: repeat(5, 1fr);
     .item-card{
-        // background-color: var(--gray);
-    
+        background-color: var(--white);
         &__text{
             padding: .8rem;
         }
@@ -52,7 +51,6 @@ start of item details style
     }
     .item-detail-content{
         flex:1;
-        
         .text-container{
             flex:1;
         }
@@ -61,12 +59,12 @@ start of item details style
 
 .detail-card{
     &__image{
-        height:350px;
+        height:380px;
         flex:1;
     }
     &__text{
-        padding: 1rem 5rem 1rem 1rem;
-        flex:1;
+        padding: 1rem;
+        flex-basis: 40%;
         font-size: 1.05rem;
         table tr td{
             padding:.4rem .5rem 0 0;
@@ -82,6 +80,9 @@ start of item details style
         .item-card{
             &__text{
                 padding: .5rem;
+            }
+            h5{
+                font-size: 1rem;
             }
         }
         .item-card__image{

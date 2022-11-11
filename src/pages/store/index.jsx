@@ -5,6 +5,9 @@ import Items from "../../components/Items"
 import { useItems } from "../../contexts/ItemsContextProvider"
 import './css/store.css'
 import CategoriesDropdown from "../../components/CategoriesDropdown"
+import { NavDropdown } from 'react-bootstrap'
+
+
 
 export default function Store(){
     
@@ -31,11 +34,21 @@ export default function Store(){
                     <button><FaSearch /></button>
                 </div>
             </div>
-            <div className='my-container mt-4'>
-                {loading && 'Loading...'}
-                {(!loading && errors) && 'error occures!'}
-                {(!loading && !query ) && <Items items={currentItems} /> }
-                {query && <Items items={queryResult} /> }
+            <div className='my-container mt-3'>
+                <div className="d-flex align-items-center justify-content-between mb-3">
+                    <h4>Items <span>({currentItems.length}</span>)</h4>
+                    <div className="d-flex align-items-center">
+                        <NavDropdown title='Sort by A-Z' className='border py-1 px-2'>
+                            <NavDropdown.Item>A-Z</NavDropdown.Item>
+                        </NavDropdown>
+                    </div>
+                </div>
+                <div>
+                    {loading && 'Loading...'}
+                    {(!loading && errors) && 'error occures!'}
+                    {(!loading && !query ) && <Items items={currentItems} /> }
+                    {query && <Items items={queryResult} /> }
+                </div>
             </div>
         </div>
     )

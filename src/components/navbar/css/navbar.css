@@ -111,26 +111,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--gray);
+    background-color: var(--dark);
     position: fixed;
     left: 0;
     bottom: 0;
   }
   .mobile-navbar .mobile-nav-link {
     margin-top: 0.5rem;
-    color: var(--main);
+    color: var(--white);
     text-decoration: none;
   }
   .mobile-navbar .mobile-nav-link .icon {
     font-size: 1.5rem;
   }
   .mobile-navbar .mobile-nav-link.center {
-    margin-top: -1.5rem;
+    margin-top: -1.2rem;
     height: 55px;
     width: 55px;
     color: var(--white);
-    border: 6px solid var(--gray);
-    background-color: var(--main);
+    border: 4px solid var(--white);
+    background-color: var(--dark);
   }
   .mobile-navbar .mobile-nav-link.center .icon {
     font-size: 1.8rem;

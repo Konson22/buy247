@@ -12,7 +12,7 @@ export default function CategoriesDropdown({color=''}){
                     <NavLink className='nav-link text-dark' to='/items/all'>All</NavLink>
                 </NavDropdown.Item>
                 {categories.map((link, index) => (
-                    <NavDropdown.Item>
+                    <NavDropdown.Item key={link.url}>
                         <NavLink className='nav-link text-dark' to={`/items/${link.url}`}>{link.text}</NavLink>
                     </NavDropdown.Item>
                 ))}

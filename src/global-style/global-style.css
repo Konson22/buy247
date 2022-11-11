@@ -13,7 +13,7 @@
 :root {
   --main:rgb(18, 99, 165);
   --gray:#eee;
-  --dark:#333;
+  --dark:rgb(97, 97, 97);
   --white:#fff;
 }
 

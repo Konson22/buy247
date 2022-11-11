@@ -9,15 +9,25 @@ export default function UploadItem(){
 
     const { setShowForm } = useGlobalContext()
     const { setItems } = useItems()
-    
+
+    const priceRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?/
+
     const validate = Yup.object({
         title:Yup.string().required('Name Required'),
         model:Yup.string().required('Model Required'),
-        price:Yup.number('must be number').required('Enter price'),
+        // price:Yup.string().matches(priceRegExp, 'Must be a number').required('Enter price'),
+        price:Yup.string().matches(priceRegExp, 'Must be a number').required('Enter price'),
         thumbnail:Yup.string().required('thumbnail Required'),
         discription:Yup.string().required('discription Required'),
     })
     
+    const initialValues = {
+        title:'',
+        model:'',
+        price:'',
+        thumbnail:'',
+        discription:''
+    }
 
     const handleSubmit = val => {
         setItems(prevItem => {
@@ -26,36 +36,21 @@ export default function UploadItem(){
         console.log(val)
     }
     return(
-        <div className="modal-wraper d-flex align-items-center justify-content-center">
-            
-            <Formik
-                initialValues={{
-                    title:'',
-                    model:'',
-                    price:'',
-                    thumbnail:'',
-                    discription:''
-                }}
-                validationSchema={validate}
-                onSubmit={values => handleSubmit(values)}
-            >
-                {() => (
-                    <div className="modal-wraper__content">
-                    <span className='modal-wraper__close' onClick={() => setShowForm(false)}>close</span>
-                        <Form>
-                            {formInputs.map(input => (
-                                <InputField name={input.name} type={input.type} placeholder={input.placeholder} label={input.label} />
-                            ))}
-                             <div className="d-flex mt-4">
-                                <button className="btn btn-warning rounded-0 flex-grow-1" type='reset'>Reset</button>
-                                <button className="btn btn-danger rounded-0 flex-grow-1 mx-1" type='button' onClick={() => setShowForm(false)}>Cancel</button>
-                                <button className="btn btn-success rounded-0 flex-grow-1" type='submit'>Submit</button>
-                            </div>
-                        </Form>
+        <Formik initialValues={initialValues} validationSchema={validate} onSubmit={values => handleSubmit(values)}>
+            <div className="">
+                <Form>
+                    {formInputs.map(input => (
+                        <InputField name={input.name} type={input.type} placeholder={input.placeholder} label={input.label} />
+                    ))}
+                        <div className="d-flex mt-4">
+                        <button className="btn btn-warning rounded-0 flex-grow-1" type='reset'>Reset</button>
+                        <button className="btn btn-danger rounded-0 flex-grow-1 mx-1" type='button' onClick={() => setShowForm(false)}>Cancel</button>
+                        <button className="btn btn-success rounded-0 flex-grow-1" type='submit'>Submit</button>
                     </div>
-                )}
-            </Formik>
-        </div>
+                </Form>
+            </div>
+            
+        </Formik>
     )
 }
 

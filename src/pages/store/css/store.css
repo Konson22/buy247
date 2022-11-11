@@ -21,6 +21,9 @@
   grid-gap: 1rem;
   grid-template-columns: repeat(5, 1fr);
 }
+.items-wraper .item-card {
+  background-color: var(--white);
+}
 .items-wraper .item-card__text {
   padding: 0.8rem;
 }
@@ -54,12 +57,12 @@ start of item details style
 }
 
 .detail-card__image {
-  height: 350px;
+  height: 380px;
   flex: 1;
 }
 .detail-card__text {
-  padding: 1rem 5rem 1rem 1rem;
-  flex: 1;
+  padding: 1rem;
+  flex-basis: 40%;
   font-size: 1.05rem;
 }
 .detail-card__text table tr td {
@@ -73,6 +76,9 @@ start of item details style
   }
   .items-wraper .item-card__text {
     padding: 0.5rem;
+  }
+  .items-wraper .item-card h5 {
+    font-size: 1rem;
   }
   .items-wraper .item-card__image {
     height: 150px;
