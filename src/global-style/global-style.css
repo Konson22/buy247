@@ -13,6 +13,8 @@
 :root {
   --main:rgb(18, 99, 165);
   --gray:#eee;
+  --pink:rgb(191, 68, 202);
+  --yellow:rgb(243, 227, 4);
   --dark:rgb(97, 97, 97);
   --white:#fff;
 }
@@ -107,7 +109,17 @@ p {
   padding: 0 4%;
 }
 
+.lg-hide {
+  display: none;
+}
+
 @media screen and (max-width: 750px) {
+  .sm-hide {
+    display: none;
+  }
+  .lg-hide {
+    display: block;
+  }
   body {
     font-size: 0.8rem;
   }

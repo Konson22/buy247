@@ -30,6 +30,14 @@
 .items-wraper .item-card__image {
   height: 190px;
 }
+.items-wraper .img-placeholder {
+  height: 190px;
+  background-color: var(--gray);
+}
+.items-wraper .img-placeholder .icon {
+  font-size: 7rem;
+  opacity: 0.5;
+}
 
 .items-wraper.col4 {
   grid-template-columns: repeat(4, 1fr);
@@ -58,6 +66,8 @@ start of item details style
 
 .detail-card__image {
   height: 380px;
+  min-height: 380px;
+  background-color: var(--gray);
   flex: 1;
 }
 .detail-card__text {

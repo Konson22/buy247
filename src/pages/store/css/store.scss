@@ -30,6 +30,14 @@
     .item-card__image{
         height: 190px;
     }
+    .img-placeholder{
+        height: 190px;
+        background-color: var(--gray);
+        .icon{
+            font-size: 7rem;
+            opacity: .5;
+        }
+    }
 }
 
 .items-wraper.col4{
@@ -60,6 +68,8 @@ start of item details style
 .detail-card{
     &__image{
         height:380px;
+        min-height:380px;
+        background-color:var(--gray);
         flex:1;
     }
     &__text{

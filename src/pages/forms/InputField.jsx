@@ -9,7 +9,7 @@ export default function InputField({label, key='', ...props}){
     return(
         <div className="input-container" key={field.name}>
             <label htmlFor={field.name}>{label}</label>
-            {props.type === 'text' && <input
+            {(props.type === 'text' || props.type === 'email' || props.type === 'password') && <input
                 className={(meta.touched && meta.error) ? 'error-border' : '' }
                 {...field}
                 {...props}

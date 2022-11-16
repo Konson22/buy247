@@ -1,70 +1,96 @@
 
+
 .header-container{
-    padding: 0 4%;
-    margin-top: .5rem;
-    .header-hero{
-        padding: 0 5%;
-        height:22.5rem;
-        flex:1;
-        background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../../assets/images/online-shop-g37a7449d9_1280.png');
-        // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../../../assets/images/online-shopping-ge0b63afec_1280.png');
-        background-size: 100% 100%;
-        color: var(--white);
-        &__content{
-            width:75%;
-            h1{
-                font-size: 3rem;
-                color: var(--white);
-            }
-            button{
-                border:none;
-                outline: none;
-            }
+    width:100%;
+    height: 32rem;
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../assets/images/bck-1.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../../assets/images/shopping-bg.jpg');
+    background-size: 100% 100%;
+    .hero{
+        padding: 0 10%;
+        width:70%;
+    }
+    h1{
+        font-size: 4.4rem;
+        color:var(--white);
+    }
+    .header-btn{
+        margin-right: .6rem;
+        color:var(--white);
+        border:2px solid var(--white);
+        text-decoration: none;
+        font-size: 1.3rem;
+    }
+    .btn-yellow{
+        border:2px solid var(--yellow);
+        background-color:var(--yellow);
+    }
+}
+
+.home-section{
+    padding:4rem 12%;
+    &__heading{
+        margin-bottom:1.5rem;
+        padding:0 14%;
+        h1{
+            font-size:3.5rem;
+        }
+        p{
+            font-size: 1.3rem;
         }
     }
-    &__category{
-        margin-left: .5rem;
-        flex-basis: 42%;
-        display: grid;
-        grid-gap: .5rem;
+}
+
+.featur-wraper{
+
+    &__content{
+        display:grid;
+        grid-gap: 1rem;
         grid-template-columns: repeat(3, 1fr);
-        .category-card{
-            height: 11rem;
-            border-radius: 6px;
-            color: var(--white);
-            background-color: var(--dark);
-            background-size: cover;
-            text-decoration: none;
-            span{
-                padding: .5rem;
-                width: 100%;
-                font-size: 1.2rem;
-                background-color: rgba(0, 0, 0, 0.39);
-            }
-        }
     }
-}
-
-
-.features-container{
-    padding: 1rem;
-    margin: 1.5rem 0;
-    border-radius: 6px;
-    background-color: var(--gray);
-    .features-card{
-        margin: 0;
-        padding: 0 1.5rem;
-        &__text-wraper{
-            margin-left:1rem;
-            flex:1;
-        }
-        &__icon{
+    .featur-card{
+        flex:1;
+        .icon{
             font-size: 5rem;
-            color:var(--main);
+        }
+        .featur-card-text{
+            flex:1;
+            margin:0 1rem;
         }
     }
 }
 
+
+.service-wraper{
+    .service-content{
+        display:grid;
+        grid-gap:1rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .category-card{
+        height:210px;
+        position: relative;
+        text-decoration: none;
+        background-size: 100% 100%;
+    }
+    .category-card-text{
+        padding: .5rem;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.8));
+        display:flex;
+        align-items: flex-end;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+}
+
+.uploaded-items-wraper{
+    background-color: var(--gray);
+}
 
 .app-content{
     .app-body{
@@ -130,57 +156,73 @@
 
 @media screen and (max-width:750px){
     
+    
     .header-container{
-        padding: 0;
-        margin: 0;
-        flex-direction: column;
-        .header-hero{
-            padding: 3rem 1rem;
-            height:auto;
-            min-height:auto;
+        padding: 2rem;
+        height: auto;
+        .hero{
+            padding: 0 3%;
+            width:100%;
             text-align: center;
-            &__content{
-                width:100%;
-                h1{
-                    font-size: 1.6rem;
-                }
+        }
+        h1{
+            font-size: 1.9rem;
+        }
+        .header-btn{
+            margin: 0 .3rem;
+            font-size: 1rem;
+        }
+        .header-btn-wraper{
+            margin: 0 auto;
+            justify-content: center;
+        }
+        
+    }
+    .home-section{
+        padding:2rem 5%;
+        &__heading{
+            margin-bottom:1rem;
+            padding:0;
+            h1{
+                font-size:1.8rem;
             }
-            .btn{
-                padding: .3rem .6rem !important;
-                font-size: 1rem !important;
+            p{
+                font-size: 1rem;
             }
         }
-        &__category{
-            margin: .5rem;
-            .category-card{
-                height: 6rem;
-                span{
-                    padding: .3rem .5rem;
-                    font-size: .9rem;
-                    background-color: rgba(0, 0, 0, 0.39);
-                }
+    }
+    .featur-wraper{
+        &__content{
+            grid-gap: .5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .featur-card{
+            flex-direction: column;
+            .icon{
+                font-size: 2.5rem;
+            }
+            .featur-card-text{
+                margin:0;
             }
         }
     }
     
-
-    .features-container{
-        padding: .5rem;
-        margin: 0;
-        background-color: var(--gray);
-        display: none !important;
-        .features-card{
-            padding: 0 .5rem;
-            flex-direction: column;
-            &__text-wraper{
-                margin-left:.5rem;
-            }
-            &__icon{
-                font-size: 2rem;
-                color:var(--main);
-            }
+    
+    .service-wraper{
+        .service-content{
+            grid-gap: .5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .category-card{
+            height:140px;
+        }
+        .category-card-text{
+            padding: .5rem;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.8));
+            font-size: 1.1rem;
         }
     }
+    
 
     .app-content{
         margin-top: 1rem;

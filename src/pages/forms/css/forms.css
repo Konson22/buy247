@@ -1,18 +1,59 @@
+.form-content {
+  padding: 2rem;
+  background-color: #fff;
+}
+.form-content .form-header .icon-wraper {
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+  color: var(--pink);
+  font-size: 4rem;
+}
+
+.form-content.login {
+  width: 28%;
+}
+
+.form-content.upload {
+  width: 35%;
+}
+
+.form-content.register {
+  width: 50%;
+}
+
+.col-form {
+  display: grid;
+  grid-column-gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .modal-wraper {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 110;
 }
 .modal-wraper__content {
-  padding: 2rem;
-  width: 37%;
-  background-color: #fff;
+  position: relative;
+}
+.modal-wraper__close {
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  font-size: 120%;
+  color: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--pink);
+  position: absolute;
+  top: -11px;
+  right: -11px;
 }
 
 .input-container {
@@ -23,7 +64,6 @@
   width: 100%;
   height: 3rem;
   outline: none;
-  border-radius: 6px;
   border: 1px solid rgb(161, 161, 161);
   background-color: transparent;
 }
@@ -35,7 +75,13 @@
   height: 4.5rem;
 }
 .input-container label {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.my-btn {
+  width: 100%;
+  color: var(--white) !important;
+  background-color: var(--pink) !important;
 }
 
 .error-border {
@@ -43,15 +89,38 @@
 }
 
 @media screen and (max-width: 750px) {
+  .form-content {
+    padding: 0;
+  }
+  .form-content .form-header .icon-wraper {
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+  }
+  .form-content.login {
+    width: 100%;
+  }
+  .form-content.upload {
+    width: 100%;
+  }
+  .form-content.register {
+    width: 100%;
+  }
+  .col-form {
+    display: block;
+  }
   .modal-wraper {
-    padding: 1rem;
-    background-color: transparent;
+    padding: 1rem 1rem 5rem 1rem;
+    height: auto;
+    min-height: calc(100vh - 112px);
+    background-color: var(--pink);
     position: unset;
   }
   .modal-wraper__content {
-    padding: 1.5rem;
-    width: 100%;
-    background-color: #fff;
+    padding: 1rem;
+  }
+  .modal-wraper__close {
+    display: none !important;
   }
   .input-container {
     margin-bottom: 0.7rem;

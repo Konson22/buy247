@@ -4,6 +4,9 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import './css/forms.css'
 import InputField from './InputField'
+import { FaTimes } from 'react-icons/fa'
+
+
 
 export default function UploadItem(){
 
@@ -37,17 +40,22 @@ export default function UploadItem(){
     }
     return(
         <Formik initialValues={initialValues} validationSchema={validate} onSubmit={values => handleSubmit(values)}>
-            <div className="">
-                <Form>
-                    {formInputs.map(input => (
-                        <InputField name={input.name} type={input.type} placeholder={input.placeholder} label={input.label} />
-                    ))}
-                        <div className="d-flex mt-4">
-                        <button className="btn btn-warning rounded-0 flex-grow-1" type='reset'>Reset</button>
-                        <button className="btn btn-danger rounded-0 flex-grow-1 mx-1" type='button' onClick={() => setShowForm(false)}>Cancel</button>
-                        <button className="btn btn-success rounded-0 flex-grow-1" type='submit'>Submit</button>
+             <div className="modal-wraper d-flex align-items-center justify-content-center">
+                <div className="modal-wraper__content form-content upload">
+                    <div className='modal-wraper__close rounded-circle' onClick={() => setShowForm(null)}>
+                        <FaTimes />
                     </div>
-                </Form>
+                    <Form>
+                        {formInputs.map(input => (
+                            <InputField name={input.name} type={input.type} placeholder={input.placeholder} label={input.label} />
+                        ))}
+                            <div className="d-flex mt-4">
+                            <button className="btn btn-warning rounded-0 flex-grow-1" type='reset'>Reset</button>
+                            <button className="btn btn-danger rounded-0 flex-grow-1 mx-1" type='button' onClick={() => setShowForm(false)}>Cancel</button>
+                            <button className="btn btn-success rounded-0 flex-grow-1" type='submit'>Submit</button>
+                        </div>
+                    </Form>
+                </div>
             </div>
             
         </Formik>

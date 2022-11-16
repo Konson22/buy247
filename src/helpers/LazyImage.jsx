@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-
+import { FaImage } from 'react-icons/fa'
 
 export function LazyImage(imageProps){
     const [shouldLoad, setShouldLoad] = useState(false);
@@ -18,6 +18,6 @@ export function LazyImage(imageProps){
     }, [shouldLoad, placeholderRef]);
 
     return (
-        shouldLoad ? <img {...imageProps} alt="" /> : <div className="img-placeholder" ref={placeholderRef} />
+        shouldLoad ? <img {...imageProps} alt="" /> : <div className="img-placeholder d-flex align-items-center justify-content-center" ref={placeholderRef}><FaImage className='icon' /></div>
     );
 };
