@@ -127,6 +127,7 @@ start of item details style
         flex-direction: column;
         &__image{
             height:250px;
+            min-height:250px;
         }
         &__text{
             padding:.7rem;

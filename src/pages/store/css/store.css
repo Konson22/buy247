@@ -117,6 +117,7 @@ start of item details style
   }
   .detail-card__image {
     height: 250px;
+    min-height: 250px;
   }
   .detail-card__text {
     padding: 0.7rem;
