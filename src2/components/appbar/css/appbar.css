@@ -1,0 +1,86 @@
+.appbar-wraper {
+  width: 100%;
+  color: var(--white);
+  background-color: var(--primary);
+  background-color: #333;
+  background-size: 100% 100%;
+  background-size: cover;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.appbar-wraper .nav-link, .appbar-wraper .nav-icon, .appbar-wraper .nav-button, .appbar-wraper .navbar-avatar {
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+}
+.appbar-wraper .navbar-avatar {
+  margin-left: 0.8rem;
+}
+.appbar-wraper .navbar-avatar__image {
+  margin-right: 0.5rem;
+  width: 37px;
+  height: 37px;
+}
+.appbar-wraper .nav-button {
+  padding: 0.4rem 1rem;
+  margin-right: 0.5rem;
+  border: 1px solid var(--white);
+}
+.appbar-wraper .nav-icon {
+  font-size: 1.5rem;
+}
+.appbar-wraper .dropdown-toggle.nav-link {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--white);
+}
+
+.appbar-wraper-top {
+  padding: 1.4rem 3%;
+}
+.appbar-wraper-top .logo-container img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.app-wraper-navigation {
+  padding: 0.4rem 3%;
+  background-color: var(--primary-light);
+}
+
+@media screen and (max-width: 750px) {
+  .appbar-wraper .nav-link {
+    color: var(--white);
+  }
+  .appbar-wraper .navbar-avatar {
+    margin: 0;
+    margin-left: 0.7rem;
+  }
+  .appbar-wraper .navbar-avatar__image {
+    margin: 0;
+    width: 28px;
+    height: 28px;
+  }
+  .appbar-wraper .nav-button {
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+    border: 1px solid var(--white);
+  }
+  .appbar-wraper .nav-icon {
+    margin-left: 0.7rem;
+    font-size: 1.3rem;
+  }
+  .appbar-wraper-top {
+    padding: 0.5rem 0.5rem;
+  }
+  .appbar-wraper-top .logo-container img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .app-wraper-navigation {
+    padding: 0.4rem 3%;
+    background-color: var(--primary-light);
+  }
+}/*# sourceMappingURL=appbar.css.map */

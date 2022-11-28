@@ -2,12 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './global-style/global-style.css'
 import GlobalContextProvider from './contexts/GlobalContextProvider';
 import ItemsContextProvider from './contexts/ItemsContextProvider';
-// import { configureStore } from '@reduxjs/toolkit'
-// import { Provider } from 'react-redux'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './global-styles/global-styles.css'
 
 ReactDOM.render(
   <React.StrictMode>

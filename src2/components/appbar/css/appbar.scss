@@ -1,0 +1,129 @@
+
+
+.appbar-wraper{
+    width: 100%;
+    color:var(--white);
+    background-color: var(--primary);
+    background-color: #333;
+    background-size: 100% 100%;
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    .nav-link, .nav-icon, .nav-button, .navbar-avatar{
+        text-decoration: none;
+        color:var(--white);
+        cursor: pointer;
+    }
+    .navbar-avatar{
+        margin-left: .8rem;
+        &__image{
+            margin-right: .5rem;
+            width:37px;
+            height:37px;
+        }
+    }
+    .nav-button{
+        padding: .4rem 1rem;
+        margin-right: .5rem;
+        border: 1px solid var(--white);
+    }
+    .nav-icon{
+        font-size: 1.5rem;
+    }
+    .dropdown-toggle.nav-link{
+        padding: .4rem .8rem;
+        border:1px solid var(--white);
+    }
+}
+
+.appbar-wraper-top{
+    padding: 1.4rem 3%;
+    .logo-container{
+        img{
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}
+
+.app-wraper-navigation{
+    padding: .4rem 3%;
+    background-color: var(--primary-light);
+}
+
+@media screen and (max-width: 750px){
+
+    .appbar-wraper{
+        .nav-link{
+            color:var(--white);
+        }
+        .navbar-avatar{
+            margin: 0;
+            margin-left: .7rem;
+            &__image{
+                margin: 0;
+                width:28px;
+                height:28px;
+            }
+        }
+        .nav-button{
+            padding: .3rem .6rem;
+            margin: 0;
+            border: 1px solid var(--white);
+        }
+        .nav-icon{
+            margin-left: .7rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    .appbar-wraper-top{
+        padding: .5rem .5rem;
+        .logo-container{
+            img{
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+
+    .app-wraper-navigation{
+        padding: .4rem 3%;
+        background-color: var(--primary-light);
+    }
+}
+
+
+// @media screen and (max-width: 750px){
+//     .appbar-wraper{
+//         padding: 0;
+//         height: auto;
+//         .nav-icon{
+//             margin-right: .7rem;
+//             font-size: 1.4rem;
+//         }
+//     }
+
+//     .logo-container{
+//         padding-top: .5rem;
+//         img{
+//             width: 5rem;
+//             height: 2.5rem;
+//         }
+//     }
+
+//     .appbar-content{
+//         padding:.5rem 0;
+//         width:100%;
+//         .navbar-avatar{
+//             margin: 0;
+//             &__image{
+//                 margin: 0;
+//                 width:37px;
+//                 height:37px;
+//             }
+//         }
+//     }
+// }

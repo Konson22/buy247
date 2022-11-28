@@ -1,93 +1,74 @@
 import { NavLink } from 'react-router-dom'
-import { FaSearch, FaUser, FaStoreAlt, FaShoppingCart } from 'react-icons/fa'
-import { FiHome, FiBell, FiMail, FiPlus, FiShoppingCart } from 'react-icons/fi'
-import { categories } from '../../assets/data'
-import CategoriesDropdown from '../CategoriesDropdown'
 import { useGlobalContext } from '../../contexts/GlobalContextProvider'
+import { FaBars, FaHome, FaBell, FaPlus, FaUser } from 'react-icons/fa'
+import { categDt } from '../../assets/data'
+import CategoriesDropdown from '../CategoriesDropdown'
 import './css/navbar.css'
 
 
-export function Navbar(){
-    
-  const { setShowForm } = useGlobalContext()
+export default function Navbar(){
+
+    const { profile, setShowForm } = useGlobalContext()
+
+    const authUserActions = (
+        <>
+            <NavLink className='nav-button sm-hid' to='/upload' >
+                <span className="sm-hide">Start salling</span>
+                <span className="lg-hide"><FaPlus /> Upload</span>
+            </NavLink>
+            <NavLink className="nav-icon lg-hide" to='/'>
+                <FaHome />
+            </NavLink>
+            <NavLink className="nav-icon" to='/notifications'>
+                <FaBell />
+            </NavLink>
+            {profile ?
+                <button className='nav-button' onClick={() => setShowForm('login')}>Login</button> :
+                <NavLink className="navbar-avatar d-flex align-items-center" to='/account'>
+                    <FaUser className="nav-icon" />
+                    {/* <img src='http://localhost:3001/images/kon.png' alt='' className='navbar-avatar__image rounded-circle' />  */}
+                    <span className='navbar-avatar__text sm-hide'>Kon</span>
+                </NavLink>
+            }
+        </>
+    )
 
     return(
-        <nav className='app-header-wraper'>
-            <div className="navbar__top d-flex align-items-center">
-                <div className="navbar__logo d-flex align-items-center">
+        <nav className='appbar-wraper'>
+            <div className='appbar-wraper-top d-flex align-items-center justify-content-between'>
+                <div className="logo-container">
                     <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt='' />
-                    {/* <span className='p-0 m-0'>logo</span> */}
                 </div>
-                <div className="navbar-search">
-                    <CategoriesDropdown color='dark' />
-                    <div className="search-bar-container d-flex align-items-center flex-grow-1">
-                        <input type="search" placeholder='Search...' />
-                        <button className='bg-warning'><FaSearch /> Search</button>
+                <div className="navbar-actions-container d-flex align-items-center justify-content-center">
+                    <div className='lg-auth-buttons'>
+                        {authUserActions}
                     </div>
-                </div>
-                <div className="navbar-buttons d-flex align-items-center">
-                    <div className="icon-wraper d-flex align-items-center text-info">
-                        <FaShoppingCart />
-                    </div>
-                    <div className="icon-wraper d-flex align-items-center text-warning">
-                        <FiMail />
-                    </div>
-                    <div className="icon-wraper d-flex align-items-center text-white">
-                        <FaUser />
+                    <div className="nav-icon lg-hide">
+                        <FaBars />
                     </div>
                 </div>
             </div>
-            <div className="navbar__links-container">
+            <div className="app-wraper-navigation d-flex align-items-center sm-hide">
                 <CategoriesDropdown />
-                <div className="navbar__links flex-grow-1">
+                <div className="flex-grow-1">
                     <ul className="nav">
                         <li className="nav-item">
                             <NavLink className='nav-link' to='/'>Main</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className='nav-link' to='/items/all'>All</NavLink>
+                            <NavLink className='nav-link' to='/products/all'>All</NavLink>
                         </li>
-                        {categories.map((link, index) => (
+                        {categDt.map((link, index) => (
                             <li className="nav-item" key={index}>
-                                <NavLink className='nav-link' to={`/items/${link.url}`}>{link.text}</NavLink>
+                                <NavLink className='nav-link' to={`/products/${link.url}`}>{link.text}</NavLink>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <div className="auth-user-buttons">
-                    <button className='btn bg-white btn-sm mx-2' onClick={() => setShowForm('upload')}>Start salling</button>
-                    <button className='btn bg-white btn-sm' onClick={() => setShowForm('login')}><FaUser /> Login | Sign up</button>
+                <div className="sm-auth-buttons">
+                    {authUserActions}
                 </div>
             </div>
         </nav>
-    )
-}
-
-
-export function MobileNavbar(){
-
-
-    return(
-        <div className='mobile-navbar'>
-            <NavLink className="mobile-nav-link d-flex align-items-center justify-content-center flex-column" to='/' >
-                <FiHome className='icon' />
-                <span className='small'>Home</span>
-            </NavLink>
-            <NavLink className="mobile-nav-link d-flex align-items-center justify-content-center flex-column" to='/items/all' >
-                <FaStoreAlt className='icon' />
-                <span className='small'>Items</span>
-            </NavLink>
-            <NavLink className="mobile-nav-link center rounded-circle d-flex align-items-center justify-content-center flex-column" to='/upload' >
-                <FiPlus className='icon' />
-            </NavLink>
-            <NavLink className="mobile-nav-link d-flex align-items-center justify-content-center flex-column" to='/my-cart' >
-                <FiShoppingCart className='icon' />
-                <span className='small'>Cart</span>
-            </NavLink>
-            <NavLink className="mobile-nav-link d-flex align-items-center justify-content-center flex-column" to='/messages' >
-                <FiBell className='icon' />
-                <span className='small'>Mess..</span>
-            </NavLink>
-        </div>
     )
 }

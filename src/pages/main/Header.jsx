@@ -1,38 +1,26 @@
-import { Link } from 'react-router-dom'
-// import Carousel from 'react-bootstrap/Carousel';
-import { useGlobalContext } from "../../contexts/GlobalContextProvider";
-
+import { Link, useNavigate } from 'react-router-dom'
+import {FiSearch} from 'react-icons/fi';
+import { useRef } from 'react';
 
 export default function Header(){
 
-    const { setShowForm } = useGlobalContext()
+    const queryRef = useRef()
+    const navigate = useNavigate()
+    
+    const handleSearch = () => queryRef.current.value && navigate(`/products/search/${queryRef.current.value}`)
 
     return(
-        <header className='header-container d-flex align-items-center justify-content-cente'>
-            <div className="hero">
+        <header className='header-container d-flex align-items-center'>
+            <div className="hero-container">
                 <h1>Where something special happens every day</h1>
-                <div className="header-btn-wraper d-flex mt-4">
-                    <Link className='header-btn btn btn-yellow' to='/items/all'>Start shopping</Link>
-                    <span className="lg-hide">
-                        <Link className='header-btn btn bordered' to='/upload'>Start salling</Link>
-                    </span>
-                    <span className="sm-hide">
-                        <button className='header-btn btn bordered' onClick={() => setShowForm('upload')}>Start salling</button>
-                    </span>
+                <div className="hero-inner-container d-flex align-items-center">
+                    <div className="hero-search-bar d-flex align-items-center">
+                        <input type="search" placeholder='Search...'  ref={queryRef} />
+                        <button className='button' onClick={handleSearch}><FiSearch /> <span className="sm-hid">Search</span></button>
+                    </div>
+                    <Link className='button header-btn sm-hide' to='/items/all'><span className="sm-hide">Start</span> shopping</Link>
                 </div>
             </div>
         </header>
     )
 }
-
-/*
--- There are many great reasons to shop our online storefronts:
-- Where something special happens every day
-- Whatever you’ve got in mind, we’ve got inside.
--- Your gateway to great shopping.
--- Your one stop smart shopping resource
--- Something different, every day.
-
-
-*/
-

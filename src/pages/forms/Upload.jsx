@@ -1,71 +1,104 @@
-import { useGlobalContext } from '../../contexts/GlobalContextProvider'
+import { useState } from 'react'
+import {categories} from '../../assets/data'
+import { FaRegImages } from 'react-icons/fa'
 import { useItems } from '../../contexts/ItemsContextProvider'
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
+import LoadingSpinner from '../../components/LoadingSpinner'
+import axiosInstance from '../../helpers/axiosInstance'
 import './css/forms.css'
-import InputField from './InputField'
-import { FaTimes } from 'react-icons/fa'
 
 
+export default function Upload(){
 
-export default function UploadItem(){
-
-    const { setShowForm } = useGlobalContext()
     const { setItems } = useItems()
+    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState('')
 
-    const priceRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?/
-
-    const validate = Yup.object({
-        title:Yup.string().required('Name Required'),
-        model:Yup.string().required('Model Required'),
-        // price:Yup.string().matches(priceRegExp, 'Must be a number').required('Enter price'),
-        price:Yup.string().matches(priceRegExp, 'Must be a number').required('Enter price'),
-        thumbnail:Yup.string().required('thumbnail Required'),
-        discription:Yup.string().required('discription Required'),
-    })
-    
-    const initialValues = {
-        title:'',
-        model:'',
-        price:'',
-        thumbnail:'',
-        discription:''
+    const handleSubmit = async ev => {
+        ev.preventDefault()
+        setLoading(true)
+        try {
+            const formData = new FormData(ev.target)
+            const result = await axiosInstance.post('/items/upload', formData).then(res => res)
+            setItems(prevItems => {
+                return [...prevItems, result.data]
+            })
+        } catch (error) {
+            setMessage(error?.response?.data)
+        }finally{
+            setLoading(false)
+        }
     }
 
-    const handleSubmit = val => {
-        setItems(prevItem => {
-            return [...prevItem, {...val, _id:'sassddd44'}]
-        })
-        console.log(val)
-    }
+
     return(
-        <Formik initialValues={initialValues} validationSchema={validate} onSubmit={values => handleSubmit(values)}>
-             <div className="modal-wraper d-flex align-items-center justify-content-center">
-                <div className="modal-wraper__content form-content upload">
-                    <div className='modal-wraper__close rounded-circle' onClick={() => setShowForm(null)}>
-                        <FaTimes />
+        <div className='form-oter-container'>
+            <div className="upload-form-wraper d-flex">
+                <div className="upload-form">
+                    <div className="text-center mb-3">
+                        <h4>Upload you product</h4>
+                        {message && <div className='p-1 bg-danger mt-2'>{message}</div>}
+                        {loading && <LoadingSpinner />}
                     </div>
-                    <Form>
-                        {formInputs.map(input => (
-                            <InputField name={input.name} type={input.type} placeholder={input.placeholder} label={input.label} />
-                        ))}
-                            <div className="d-flex mt-4">
-                            <button className="btn btn-warning rounded-0 flex-grow-1" type='reset'>Reset</button>
-                            <button className="btn btn-danger rounded-0 flex-grow-1 mx-1" type='button' onClick={() => setShowForm(false)}>Cancel</button>
-                            <button className="btn btn-success rounded-0 flex-grow-1" type='submit'>Submit</button>
+                    <form onSubmit={handleSubmit}>
+                        <div className="row">
+                            {formInputs.map((fields, index) => (
+                                <div className={`input-container ${fields.col}`} key={index}>
+                                    <label htmlFor={fields.name}>{fields.label}</label>
+                                    {(fields.type === 'text' || fields.type === 'email' || fields.type === 'password' ) && 
+                                        <input {...fields} />
+                                    }
+                                    {fields.type === 'select' && 
+                                        <select {...fields}>
+                                            <option>Select {fields.name}</option>
+                                            {fields?.options?.map((opt, index) => (
+                                                <option value={opt.url} key={index}>{opt.text}</option>
+                                            ))}
+                                        </select>
+                                    }
+                                    {fields.type === 'textarea' &&
+                                        <textarea {...fields} ></textarea>
+                                    }
+                                    {fields.type === 'file' &&
+                                        <div className='file-input- text-white'>
+                                            <label className='file-button btn' htmlFor="image" >
+                                            <FaRegImages className='image-icon' /> Choose
+                                            </label>
+                                            <input id='image' {...fields} />
+                                        </div>
+                                    }
+                                </div>
+                            ))}
                         </div>
-                    </Form>
+                        <div className="">
+                            <button type="submit">Upload</button>
+                        </div>
+                    </form>
                 </div>
+                <div className="upload-text"></div>
             </div>
-            
-        </Formik>
+        </div>
     )
 }
 
-const formInputs = [
-    { name:'title', type:'text', placeholder:'Item name', label:'Item name' },
-    { name:'model', type:'text', placeholder:'Model', label:'Model' },
-    { name:'thumbnail', type:'text', placeholder:'thumbnail', label:'thumbnail' },
-    { name:'price', type:'text', placeholder:'Price', label:'Set price' },
-    { name:'discription', type:'textarea', placeholder:'item discription here..', label:'Discription' },
+const currency = [
+    { text:'SSP',  url:"SSP" },
+    { text:'USD', url:"USD"}
 ]
+
+const conditions = [
+    {text:'New', url:'New'},
+    {text:'Used', url:'Used'}
+]
+
+const formInputs = [
+    { name:'title', type:'text', placeholder:'Item name', label:'Item name', col:'' },
+    { name:'category', type:'select', placeholder:'category', label:'category', options:categories, col:'col-md-6' },
+    { name:'condition', type:'select', placeholder:'category', label:'category', options:conditions, col:'col-md-6' },
+    { name:'price', type:'text', placeholder:'Price', label:'Set price', col:'col-md-6' },
+    { name:'currency', type:'select', placeholder:'Currency', label:'Set Currency', options:currency, col:'col-md-6' },
+    { name:'description', type:'textarea', placeholder:'description...', label:'Description', col:'' },
+    { name:'image', type:'file', placeholder:'image', label:'Upload Image', col:'' },
+]
+
+
+
