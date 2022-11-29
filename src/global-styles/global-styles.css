@@ -11,9 +11,9 @@
   src: url("../assets/fonts/Southmore.ttf");
 }
 :root {
-  --primary: rgb(7, 186, 199);
-  --secondary:rgb(7, 186, 199);
-  --gradient:linear-gradient(45deg, rgb(76, 219, 188), rgb(59, 228, 228));
+  --secondary: rgb(242, 168, 128);
+  --primary:rgb(129, 122, 200);
+  --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
   --gray:#eee;
   --white:#fff;
 }
@@ -21,6 +21,7 @@
 body {
   font-family: "SignikaNegative";
   color: rgb(139, 138, 138);
+  font-size: 19px;
 }
 
 img {
@@ -122,6 +123,9 @@ p {
   }
   body {
     font-size: 1rem;
+  }
+  .app-content {
+    margin-top: 4rem;
   }
   .my-container {
     margin-bottom: 4rem;

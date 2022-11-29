@@ -2,20 +2,27 @@ import { FaWallet, FaHandshake, FaUnity } from 'react-icons/fa'
 
 export default function Features(){
     return(
-        <div className='home-section'>
-            <div className="home-section-heading text-center">
-                <h1>why to shop at our online store</h1>
+        <div className='home-section feature-container d-flex'>
+            <div className="feature-sidebar">
+                <img src={process.env.PUBLIC_URL+'/images/shopping-bg.jpg'} alt='' />
             </div>
-            <div className="featur-wraper">
-                {featuresData.map((feature, index) => (
-                    <div className='featur-card text-center' key={index}>
-                        {feature.icon}
-                        <div className="featur-card-text">
-                            <h4>{feature.title}</h4>
-                            <p>{feature.discription}</p>
-                        </div>
+            <div className="feature-content">
+                <div className="home-section-heading">
+                    <h1>why to shop at Buy247</h1>
+                </div>
+                <div className="home-section-content">
+                    <div className="mt-3">
+                        {featuresData.map((feature, index) => (
+                            <div className='featur-card d-flex' key={index}>
+                                {feature.icon}
+                                <div className="featur-card-text">
+                                    <h4>{feature.title}</h4>
+                                    <p>{feature.discription}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     )

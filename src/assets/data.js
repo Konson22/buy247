@@ -54,7 +54,12 @@ export const categoriesData = [
     {
         text:'Electronics',
         url:'electronics',
-        image:process.env.PUBLIC_URL+'/images/electronics.jpg'
+        image:process.env.PUBLIC_URL+'/images/electronics.jpg',
+        subcategory:[
+            'Phone',
+            'laptops',
+            'printers'
+        ]
     },
     {
         text:'Cars & Auto',
@@ -93,12 +98,24 @@ export const categDt = [
     {
         text:'Electronics',
         url:'electronics',
-        image:process.env.PUBLIC_URL+'/images/electronics.jpg'
+        image:process.env.PUBLIC_URL+'/images/electronics.jpg',
+        subcategory:[
+            'Phone',
+            'laptops',
+            'printers'
+        ]
     },
     {
         text:'Properties',
-        url:'cars',
-        image:process.env.PUBLIC_URL+'/images/office-work-1149087__340.jpg'
+        url:'properties',
+        image:process.env.PUBLIC_URL+'/images/property.jpg',
+        subcategory:[
+            'Houses',
+            'Apartments',
+            'Plotes',
+            'Shops',
+            'Offices'
+        ]
     },
     {
         text:'Health & Beauty',

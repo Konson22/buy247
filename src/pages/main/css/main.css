@@ -4,7 +4,7 @@
 .header-container {
   width: 100%;
   height: 70vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/images/pexels-negative-space-34577.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../assets/images/bck-5.jpg");
   background-size: 100% 100%;
 }
 .header-container .hero-container {
@@ -22,7 +22,6 @@
   width: 100%;
 }
 .header-container .hero-search-bar {
-  padding: 0.5rem;
   height: 4rem;
   flex: 1;
   border-radius: 6px;
@@ -41,12 +40,14 @@
   padding: 0 1rem;
   border: none;
   outline: none;
-  border-radius: 6px;
   color: var(--white);
   background-color: var(--secondary);
+  background-image: linear-gradient(180deg, var(--primary) 30%, rgb(142, 136, 218));
 }
 .header-container .header-btn {
   margin-left: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--white);
   height: 4rem;
   display: flex;
   align-items: center;
@@ -72,20 +73,21 @@
 ************************************************************/
 .categories-container .categories-content {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.4rem;
+  grid-template-columns: repeat(4, 1fr);
 }
 .categories-container .category-card {
-  height: 240px;
+  height: 220px;
   position: relative;
   text-decoration: none;
-  background-size: 100% 100%;
+  background-size: cover;
+  background-color: var(--gray);
 }
 .categories-container .category-card-text {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.8));
+  background-image: linear-gradient(45deg, rgba(125, 85, 235, 0.2), rgba(141, 10, 180, 0.8));
   display: flex;
   align-items: flex-end;
   position: absolute;
@@ -105,28 +107,39 @@
 /************************************************************
     *** START OF FEAUTURES SECTION STYLE ***
 ************************************************************/
-.featur-wraper {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
+.feature-container .feature-sidebar {
+  flex-basis: 50%;
 }
-.featur-wraper .featur-card {
-  padding: 1.5rem;
+.feature-container .feature-sidebar img {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
-.featur-wraper .icon {
-  margin-right: 1rem;
-  font-size: 6rem;
+.feature-container .feature-content {
+  flex: 1;
+  padding: 0 2rem;
+}
+.feature-container .feature-content .home-section-heading {
+  width: 100%;
+  padding: 0;
+}
+.feature-container .feature-content .featur-card-text {
+  padding-right: 5rem;
+}
+.feature-container .feature-content .icon {
+  margin-right: 0.7rem;
+  font-size: 2.8rem;
 }
 
 .benefite-wraper {
   padding: 2rem;
-  margin: -5rem 4% 0 4%;
+  margin: 2rem 4% 0 4%;
   border-radius: 10px;
   color: var(--white);
   display: flex;
   align-items: center;
   justify-self: space-between;
   background-color: var(--primary);
+  background-image: var(--gradient);
 }
 .benefite-wraper .icon {
   margin-right: 1rem;
@@ -141,9 +154,11 @@
       *** START OF HEADER STYLE ***
   ************************************************************/
   .header-container {
-    padding: 3.5rem 1rem;
+    padding: 4.5rem 1rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../assets/images/bck-4.png");
     height: auto;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: right;
   }
   .header-container .hero-container {
     margin: 0;
@@ -157,13 +172,16 @@
     margin-top: 1.5rem;
   }
   .header-container .hero-search-bar {
-    padding: 0.5rem;
+    padding: 0.3rem;
     height: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
   }
   .header-container .hero-search-bar input {
     padding: 0 0.5rem;
+    background-color: transparent;
   }
   .header-container .button {
+    border-radius: 6px;
     padding: 0 0.7rem;
   }
   .home-section {
@@ -205,15 +223,25 @@
   /************************************************************
       *** START OF FEAUTURES SECTION STYLE ***
   ************************************************************/
-  .featur-wraper {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
+  .feature-container {
+    display: block !important;
+    flex-direction: column;
   }
-  .featur-wraper .featur-card {
-    padding: 0 1rem;
+  .feature-container .feature-sidebar {
+    flex: 1;
   }
-  .featur-wraper .icon {
-    font-size: 3.5rem;
+  .feature-container .feature-content {
+    padding: 1rem;
+  }
+  .feature-container .feature-content .home-section-heading {
+    padding: 0;
+  }
+  .feature-container .feature-content .featur-card-text {
+    padding: 0;
+    flex: 1;
+  }
+  .feature-container .feature-content .icon {
+    margin-right: 0.7rem;
+    font-size: 2.4rem;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useGlobalContext } from '../../contexts/GlobalContextProvider'
-import { FaBars, FaHome, FaBell, FaPlus, FaUser } from 'react-icons/fa'
+import { FaBars, FaHome, FaBell, FaPlus, FaUser, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { categDt } from '../../assets/data'
 import CategoriesDropdown from '../CategoriesDropdown'
 import './css/navbar.css'
@@ -37,15 +37,28 @@ export default function Navbar(){
         <nav className='appbar-wraper'>
             <div className='appbar-wraper-top d-flex align-items-center justify-content-between'>
                 <div className="logo-container">
-                    <img src={process.env.PUBLIC_URL+'/images/logo.png'} alt='' />
+                    <img src={process.env.PUBLIC_URL+'/images/pngwing.com.png'} alt='' />
                 </div>
                 <div className="navbar-actions-container d-flex align-items-center justify-content-center">
-                    <div className='lg-auth-buttons'>
-                        {authUserActions}
+                    <div className="search-bar-container subcribe-container d-flex align-items-center sm-hide">
+                        <input type="text" placeholder='Subcribe' />
+                        <button>Subcribe</button>
                     </div>
-                    <div className="nav-icon lg-hide">
-                        <FaBars />
+                    <div className="social-media-container d-flex align-items-center sm-hide">
+                        <span>
+                            <FaFacebook />
+                        </span>
+                        <span>
+                            <FaTwitter />
+                        </span>
+                        <span>
+                            <FaInstagram />
+                        </span>
                     </div>
+                </div>
+                <div className='lg-auth-buttons'>
+                    {authUserActions}
+                    <FaBars  className="nav-icon" />
                 </div>
             </div>
             <div className="app-wraper-navigation d-flex align-items-center sm-hide">

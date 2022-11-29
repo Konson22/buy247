@@ -15,6 +15,7 @@ function App() {
   return (
     <div className='app-wraper'>
       <Navbar />
+    <div className='app-content'>
       <ScrollToTop />
       <Routes>
         <Route path='/' element={<Main />} />
@@ -25,6 +26,7 @@ function App() {
         <Route path='products/search/:query' element={<ProductSearch />} />
         <Route path='/product/detail/:itemId' element={<ProductDetail />} />
       </Routes>
+    </div>
     </div>
   );
 }

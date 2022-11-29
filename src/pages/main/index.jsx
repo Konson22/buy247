@@ -5,6 +5,7 @@ import './css/main.css'
 import Features from './Features'
 import Testimonies from './Testimonies'
 import Benefits from './Benefits'
+import Footer from '../../components/footer'
 
 export default function Main(){
     return(
@@ -15,6 +16,7 @@ export default function Main(){
             <Products />
             <Features />
             <Testimonies />
+            <Footer />
         </main>
     )
 }

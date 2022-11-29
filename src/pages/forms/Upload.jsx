@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {categories} from '../../assets/data'
+import {categDt} from '../../assets/data'
 import { FaRegImages } from 'react-icons/fa'
 import { useItems } from '../../contexts/ItemsContextProvider'
 import LoadingSpinner from '../../components/LoadingSpinner'
@@ -28,6 +28,7 @@ export default function Upload(){
             setLoading(false)
         }
     }
+    
 
 
     return(
@@ -86,14 +87,15 @@ const currency = [
 ]
 
 const conditions = [
+    {text:'N/A', url:'N/A'},
     {text:'New', url:'New'},
     {text:'Used', url:'Used'}
 ]
 
 const formInputs = [
     { name:'title', type:'text', placeholder:'Item name', label:'Item name', col:'' },
-    { name:'category', type:'select', placeholder:'category', label:'category', options:categories, col:'col-md-6' },
-    { name:'condition', type:'select', placeholder:'category', label:'category', options:conditions, col:'col-md-6' },
+    { name:'category', type:'select', placeholder:'category', label:'category', options:categDt, col:'col-md-6' },
+    { name:'condition', type:'select', placeholder:'Condition', label:'Condition', options:conditions, col:'col-md-6' },
     { name:'price', type:'text', placeholder:'Price', label:'Set price', col:'col-md-6' },
     { name:'currency', type:'select', placeholder:'Currency', label:'Set Currency', options:currency, col:'col-md-6' },
     { name:'description', type:'textarea', placeholder:'description...', label:'Description', col:'' },
@@ -101,4 +103,33 @@ const formInputs = [
 ]
 
 
+/*
+    const [selectedCategory, setSelectedCategory] = useState()
 
+    const handleCategory = (category, subCategory) => {
+        setSelectedCategory({category, subCategory})
+    }
+
+<div className="upload-form-sidebar">
+                    <h4>Categories</h4>
+                    <ul className="mt-3">
+                        {categDt.map(category => (
+                            <li className='category-item d-flex align-items-center justify-content-between' key={category.url}>
+                                <span>{category.url}</span>
+                                {category.subcategory && <FaChevronRight className='icon' />}
+                                {category.subcategory && <ul className="subcategory-item">
+                                    {category.subcategory?.map(subcat => (
+                                        <li key={subcat} onClick={() => handleCategory(category.url, subcat)}>
+                                            {subcat}
+                                        </li>
+                                    ))}
+                                </ul>}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="upload-form-content">
+                    <h5>Category: {selectedCategory.category}</h5>
+                    <h6>Sub Category: {selectedCategory.subCategory}</h6>
+                </div> 
+*/
