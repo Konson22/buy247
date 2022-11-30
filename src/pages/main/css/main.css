@@ -199,7 +199,7 @@
     padding: 0;
   }
   .home-section .home-section-heading h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .home-section .home-section-heading p {
     font-size: 1rem;
@@ -209,14 +209,14 @@
   ************************************************************/
   .categories-container .categories-content {
     grid-gap: 0.5rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .categories-container .category-card {
-    height: 100px;
+    height: 120px;
   }
   .categories-container .category-card-text {
     padding: 0.5rem;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
   .benefite-wraper {
     display: none !important;

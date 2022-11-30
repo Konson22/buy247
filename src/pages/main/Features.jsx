@@ -4,7 +4,8 @@ export default function Features(){
     return(
         <div className='home-section feature-container d-flex'>
             <div className="feature-sidebar">
-                <img src={process.env.PUBLIC_URL+'/images/shopping-bg.jpg'} alt='' />
+                <img src={process.env.PUBLIC_URL+'/images/shopping-g384439364_1280.jpg'} alt='' />
+                {/* <img src={process.env.PUBLIC_URL+'/images/shopping-bg.jpg'} alt='' /> */}
             </div>
             <div className="feature-content">
                 <div className="home-section-heading">

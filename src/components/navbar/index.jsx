@@ -12,9 +12,9 @@ export default function Navbar(){
 
     const authUserActions = (
         <>
-            <NavLink className='nav-button sm-hid' to='/upload' >
+            <NavLink className='nav-button' to='/upload' >
                 <span className="sm-hide">Start salling</span>
-                <span className="lg-hide"><FaPlus /> Upload</span>
+                <span className="lg-hide">Upload</span>
             </NavLink>
             <NavLink className="nav-icon lg-hide" to='/'>
                 <FaHome />
