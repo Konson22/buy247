@@ -12,6 +12,7 @@ export default function Upload(){
     const { setItems } = useItems()
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
+    const [selectedCategory, setSelectedCategory] = useState('')
 
     const handleSubmit = async ev => {
         ev.preventDefault()
@@ -29,107 +30,79 @@ export default function Upload(){
         }
     }
     
+    const handleCategory = category => {
+        setSelectedCategory(category)
+    }
+
+    const subcategories = categDt.find(c => c.url === selectedCategory)
 
 
     return(
-        <div className='form-oter-container'>
-            <div className="upload-form-wraper d-flex">
-                <div className="upload-form">
-                    <div className="text-center mb-3">
-                        <h4>Upload you product</h4>
-                        {message && <div className='p-1 bg-danger mt-2'>{message}</div>}
-                        {loading && <LoadingSpinner />}
-                    </div>
-                    <form onSubmit={handleSubmit}>
-                        <div className="row">
-                            {formInputs.map((fields, index) => (
-                                <div className={`input-container ${fields.col}`} key={index}>
-                                    <label htmlFor={fields.name}>{fields.label}</label>
-                                    {(fields.type === 'text' || fields.type === 'email' || fields.type === 'password' ) && 
-                                        <input {...fields} />
-                                    }
-                                    {fields.type === 'select' && 
-                                        <select {...fields}>
-                                            <option>Select {fields.name}</option>
-                                            {fields?.options?.map((opt, index) => (
-                                                <option value={opt.url} key={index}>{opt.text}</option>
-                                            ))}
-                                        </select>
-                                    }
-                                    {fields.type === 'textarea' &&
-                                        <textarea {...fields} ></textarea>
-                                    }
-                                    {fields.type === 'file' &&
-                                        <div className='file-input- text-white'>
-                                            <label className='file-button btn' htmlFor="image" >
-                                            <FaRegImages className='image-icon' /> Choose
-                                            </label>
-                                            <input id='image' {...fields} />
-                                        </div>
-                                    }
-                                </div>
-                            ))}
-                        </div>
-                        <div className="">
-                            <button type="submit">Upload</button>
-                        </div>
-                    </form>
+        <div className='form-oter-container d-flex justify-content-center'>
+            <div className="upload-form">
+                <div className="text-center mb-3">
+                    <h4>Upload you product</h4>
+                    {message && <div className='p-1 bg-danger mt-2'>{message}</div>}
+                    {loading && <LoadingSpinner />}
                 </div>
-                <div className="upload-text"></div>
+                <form onSubmit={handleSubmit}>
+                    <div className="row">
+                        <div className='input-container'>
+                            <label htmlFor="title">Title</label>
+                            <input name='title' type="text" placeholder='Title/Name/Model/' />
+                        </div>
+                        <div className='input-container col-md-6'>
+                            <label>Select category</label>
+                            <select name='category' onChange={e => handleCategory(e.target.value)}>
+                                {categDt?.map(category => (
+                                    <option value={category.url} key={category.url}>
+                                        {category.text}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                        {/* subcategry */}
+                        <div className='input-container col-md-6'>
+                            <label>Sub category</label>
+                            <select name='sub_category'>
+                                {(subcategories && subcategories.subcategory) ? subcategories.subcategory.map(opt => (
+                                    <option value={opt} key={opt}>{opt}</option>
+                                )):
+                                    <option value='N/A'>N/A</option>
+                                }
+                            </select>
+                        </div>
+                        {/* Set price */}
+                        <div className='input-container col-md-6'>
+                            <label htmlFor="price">Set Price</label>
+                            <input name='price' type="text" placeholder='Price' />
+                        </div>
+                        {/* Currency */}
+                        <div className='input-container col-md-6'>
+                            <label htmlFor="currency">Currency</label>
+                            <select name='currency'>
+                                <option value='USD'>USD</option>
+                                <option value='SSP'>SSP</option>
+                                <option value='UGX'>UGX</option>
+                            </select>
+                        </div>
+                        {/*  description */}
+                        <div className='input-container'>
+                            <label htmlFor="description">Description</label>
+                            <textarea name='description' placeholder='Description...' ></textarea>
+                        </div>
+                        <div className='input-container file-input- text-white'>
+                            <label className='file-button btn' htmlFor="image" >
+                            <FaRegImages className='image-icon' /> Choose
+                            </label>
+                            <input id='image' type='file' name='image' />
+                        </div>
+                    </div>
+                    <div className="">
+                        <button type="submit">Upload</button>
+                    </div>
+                </form>
             </div>
         </div>
     )
 }
-
-const currency = [
-    { text:'SSP',  url:"SSP" },
-    { text:'USD', url:"USD"}
-]
-
-const conditions = [
-    {text:'N/A', url:'N/A'},
-    {text:'New', url:'New'},
-    {text:'Used', url:'Used'}
-]
-
-const formInputs = [
-    { name:'title', type:'text', placeholder:'Item name', label:'Item name', col:'' },
-    { name:'category', type:'select', placeholder:'category', label:'category', options:categDt, col:'col-md-6' },
-    { name:'condition', type:'select', placeholder:'Condition', label:'Condition', options:conditions, col:'col-md-6' },
-    { name:'price', type:'text', placeholder:'Price', label:'Set price', col:'col-md-6' },
-    { name:'currency', type:'select', placeholder:'Currency', label:'Set Currency', options:currency, col:'col-md-6' },
-    { name:'description', type:'textarea', placeholder:'description...', label:'Description', col:'' },
-    { name:'image', type:'file', placeholder:'image', label:'Upload Image', col:'' },
-]
-
-
-/*
-    const [selectedCategory, setSelectedCategory] = useState()
-
-    const handleCategory = (category, subCategory) => {
-        setSelectedCategory({category, subCategory})
-    }
-
-<div className="upload-form-sidebar">
-                    <h4>Categories</h4>
-                    <ul className="mt-3">
-                        {categDt.map(category => (
-                            <li className='category-item d-flex align-items-center justify-content-between' key={category.url}>
-                                <span>{category.url}</span>
-                                {category.subcategory && <FaChevronRight className='icon' />}
-                                {category.subcategory && <ul className="subcategory-item">
-                                    {category.subcategory?.map(subcat => (
-                                        <li key={subcat} onClick={() => handleCategory(category.url, subcat)}>
-                                            {subcat}
-                                        </li>
-                                    ))}
-                                </ul>}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="upload-form-content">
-                    <h5>Category: {selectedCategory.category}</h5>
-                    <h6>Sub Category: {selectedCategory.subCategory}</h6>
-                </div> 
-*/

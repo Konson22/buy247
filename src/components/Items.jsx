@@ -17,7 +17,7 @@ export default function Items({items, col=''}){
                         <div className="item-card-footer d-flex align-items-center justify-content-between">
                             <Link className="btn item-card-btn rounded-0" to={`/product/detail/${item.id}`}>
                                 detail <span className="sm-hide"> & contacts</span>
-                                <FaArrowRight />
+                                <FaArrowRight className='mx-2' />
                             </Link>
                         </div>
                     </div>

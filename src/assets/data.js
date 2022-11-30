@@ -102,7 +102,51 @@ export const categDt = [
         subcategory:[
             'Phone',
             'laptops',
-            'printers'
+            'Camera',
+            'printers',
+            'Accessories',
+            'Heater',
+        ]
+    },
+    {
+        text:'Fashion & Jewlary',
+        url:'fashion',
+        image:process.env.PUBLIC_URL+'/images/fashion.jpg',
+        subcategory:[
+            'Cloths',
+            'Watch',
+            'Chose',
+            'Eye Glasses',
+            'Rings',
+            'Belt',
+            'Chains',
+        ]
+    },
+    {
+        text:'Health & Beauty',
+        url:'skincare',
+        image:process.env.PUBLIC_URL+'/images/skincare.jpg'
+    },
+    {
+        text:'Home & Decore',
+        url:'home-kitchen',
+        image:process.env.PUBLIC_URL+'/images/home-kitchen.jpg',
+        subcategory:[
+            'Beds',
+            'Tables',
+            'Sofa set',
+            'Lights',
+        ]
+    },
+    {
+        text:'Auto & spare',
+        url:'cars',
+        image:process.env.PUBLIC_URL+'/images/cars.jpg',
+        subcategory:[
+            'Cars',
+            'Mototcycles',
+            'Bicyle',
+            'Spare parts',
         ]
     },
     {
@@ -116,26 +160,6 @@ export const categDt = [
             'Shops',
             'Offices'
         ]
-    },
-    {
-        text:'Health & Beauty',
-        url:'skincare',
-        image:process.env.PUBLIC_URL+'/images/skincare.jpg'
-    },
-    {
-        text:'Auto & spare',
-        url:'cars',
-        image:process.env.PUBLIC_URL+'/images/cars.jpg'
-    },
-    {
-        text:'Fashion & Jewlary',
-        url:'fashion',
-        image:process.env.PUBLIC_URL+'/images/fashion.jpg'
-    },
-    {
-        text:'Home Decore',
-        url:'home-kitchen',
-        image:process.env.PUBLIC_URL+'/images/home-kitchen.jpg'
     },
 ]
 

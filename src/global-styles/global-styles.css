@@ -11,7 +11,7 @@
   src: url("../assets/fonts/Southmore.ttf");
 }
 :root {
-  --secondary: rgb(242, 168, 128);
+  --secondary: rgb(183, 178, 248);
   --primary:rgb(129, 122, 200);
   --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
   --gray:#eee;
@@ -21,7 +21,7 @@
 body {
   font-family: "SignikaNegative";
   color: rgb(139, 138, 138);
-  font-size: 19px;
+  font-size: 18px;
 }
 
 img {

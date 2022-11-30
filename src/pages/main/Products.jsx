@@ -7,7 +7,7 @@ import { FaArrowRight } from 'react-icons/fa'
 export default function Products(){
 
     const { loading, errors, items } = useItems()
-
+    
     return(
         <div className='home-section products-container'>
             <div className="home-section-heading text-center">
@@ -16,9 +16,9 @@ export default function Products(){
             <div className="home-section-content">
                 {loading && 'Loading...'}
                 {(!loading && errors) && 'error occures!'}
-                {(!loading && items.length >= 1 ) && <Items items={items} col='col4' /> }
+                {(!loading && items.length >= 1 ) && <Items items={items.slice(0, 8)} col='col4' /> }
                 <div className="text-center mt-4">
-                    <Link className='btn btn-primary' to='/products/all'>View more <FaArrowRight /></Link>
+                    <Link className='btn my-btn' to='/products/all'>Explore More Items <FaArrowRight /></Link>
                 </div>
             </div>
         </div>

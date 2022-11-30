@@ -12,11 +12,9 @@ export default function Header(){
     return(
         <header className='header-container d-flex align-items-center'>
             <div className="hero-container">
-                {/* <h1>Whether you want to stay on top of the latest trends</h1> */}
                 {/* <h1>There’s nothing quite like the thrill of finding a great bargain</h1> */}
                 <h1>All items, every day, are better than before</h1>
                 {/* <h1>All your needs are complete here</h1> */}
-                {/* <h1>Where something special happens every day</h1> */}
                 <div className="hero-inner-container d-flex align-items-center">
                     <div className="hero-search-bar d-flex align-items-center">
                         <input type="search" placeholder='Search...'  ref={queryRef} />

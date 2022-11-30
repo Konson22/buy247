@@ -1,28 +1,12 @@
 
-
 .form-oter-container{
-    padding: 2rem 0;
-    button{
-        padding: .6rem .7rem;
-        border: none;
-        width:100%;
-        background-color: var(--primary);
-    }
+    padding: 1rem;
 }
 
-
-.upload-form-wraper{
-    width:80%;
-    margin:0 auto;
-    background-color: var(--gray);
-    .upload-form, .upload-text{
-        padding: 2rem;
-        flex:1;
-    }
-    .upload-text{
-        background-image: url('../../../assets/images/bck-1.jpg');
-        background-size: 100% 100%;
-    }
+.upload-form{
+    padding:2rem 3rem;
+    width:50%;
+    background-color: #eee;
 }
 
 .form-loader{
@@ -44,12 +28,17 @@
         height: 3.3rem;
         width:100%;
         border:1px solid #ccc;
+        border-radius: 5px;
         outline: none;
         background-color: var(--white);
     }
     textarea{
         height:6rem;
         resize: none;
+    }
+    option{
+        border:1px solid red;
+        padding:.5rem;
     }
 
 }
@@ -66,100 +55,16 @@ input[type="file"]{
 }
 
 
-@media screen and (max-width:750px){
 
+@media screen and (max-width:750px){
     .form-oter-container{
         padding: 0;
     }
-
-    .upload-form-wraper{
+    
+    .upload-form{
+        padding:1.5rem;
         width:100%;
-        background-color: var(--gray);
-        .upload-form, .upload-text{
-            padding: 1rem;
-        }
-        .upload-text{
-            display: none;
-        }
-    }
-
-    .input-container{
-        margin-bottom: .7rem;
-        input, select, textarea{
-            height: 2.8rem;
-        }
-        textarea{
-            height:4rem;
-        }
-
-        .image-icon{
-            margin-right: .5rem;
-            font-size:1.3rem;
-        }
-    }
-}
-
-
-
-/*
-
-@keyframes animateElem {
-    0%{
-        opacity: .5;
-        left: 98%;
-    }
-    100%{
-        opacity: 1;
-        left: 100%;
-    }
-}
-
-.upload-form-sidebar{
-    flex-basis: 26%;
-    .header{
-        padding: 1rem;
+        background-color: #fff;
     }
     
-    ul{
-        margin:0;
-        padding:0 !important;
-        list-style: none;
-        li{
-            padding: .8rem;
-            position: relative;
-            border:1px solid var(--gray);
-            &:hover{
-                background-color: var(--gray);
-                ul{
-                    display: block;
-                }
-                .icon{
-                    transform: rotate(90deg);
-                }
-            }
-        }
-        ul{
-            padding: 1rem 1.5rem;
-            width: max-content;
-            display: none;
-            background-color: rgb(243, 243, 243);
-            transform: left;
-            animation: animateElem .3s ease-in-out;
-            position: absolute;
-            top:0;
-            left:100%;
-            li{
-                &:hover{
-                    background-color: var(--white);
-                }
-            }
-        }
-    }
 }
-
-.upload-form-content{
-    padding: 1rem;
-    flex:1;
-}
-
-*/

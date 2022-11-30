@@ -1,26 +1,31 @@
-import { useParams } from 'react-router-dom'
-import Items from "../../components/Items"
 import { useItems } from "../../contexts/ItemsContextProvider"
-import SearchBar from "../../components/SearchBar"
 import CategoriesDropdown from "../../components/CategoriesDropdown"
-import './css/products.css'
+import SearchBar from "../../components/SearchBar"
+import { useParams } from 'react-router-dom'
 import { categDt } from '../../assets/data'
+import Items from "../../components/Items"
+import { useEffect, useState } from 'react'
+import './css/products.css'
 
 export default function Products(){
 
     const { category } = useParams()
     const { loading, errors, items } = useItems()
+    const [subCategoryQuery, setSubCategoryQuery] = useState('')
 
-    
-    const currentItems = (category === 'all' ) ? items : items.filter(item => item.category === category)
-    
+    const currentItems = (category === 'all' ) ? items : items.filter(item => {
+        return subCategoryQuery ? item.sub_category === subCategoryQuery : item.category === category
+    })
+
+    useEffect(() => setSubCategoryQuery(''), [category])
+
     const subcategory = categDt.find(c => c.url === category)?.subcategory
 
     const subcategoriesContent = (
         <div className="suncategories-container flex-grow-1 d-flex align-items-center">
-            <span>{category}</span>
+            <span onClick={() => setSubCategoryQuery('')}>All</span>
             {subcategory && subcategory.map(subcat => (
-                <span key={subcat}>{subcat}</span>
+                <span key={subcat} onClick={() => setSubCategoryQuery(subcat)}>{subcat}</span>
             ))}
         </div>
     )
@@ -29,9 +34,11 @@ export default function Products(){
         <main className='page-wraper'>
             <div className="seconary-navbar">
                 <div className="d-flex align-items-center">
-                    <CategoriesDropdown />
+                    <div className="lg-hide">
+                        <CategoriesDropdown />
+                    </div>
                     <div className="sm-hide flex-grow-1">
-                        {subcategoriesContent}
+                        {subcategory && subcategoriesContent}
                     </div>
                     <SearchBar />
                 </div>

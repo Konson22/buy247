@@ -3,7 +3,6 @@
     width: 100%;
     color:var(--white);
     background-color: var(--primary);
-    // background-image:var(--gradient);
     background-size: cover;
     position: sticky;
     top: 0;
@@ -28,8 +27,7 @@
     .nav-button{
         padding: .4rem 1rem;
         margin-right: .5rem;
-        border: 1px solid var(--white);
-        background-color:var(--primary);
+        background-color:var(--secondary);
     }
     .nav-icon{
         font-size: 1.5rem;
@@ -102,7 +100,7 @@
         .nav-button{
             padding: .3rem .6rem;
             margin: 0;
-            border: 1px solid var(--white);
+            background-color:var(--primary);
         }
         .nav-icon{
             margin-left: .8rem;
@@ -117,7 +115,7 @@
         .logo-container{
             flex: unset;
             img{
-                width: 5rem;
+                // width: 6rem;
                 height: 3.5rem;
             }
         }

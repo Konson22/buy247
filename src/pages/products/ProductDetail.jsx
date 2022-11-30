@@ -1,12 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Items from "../../components/Items"
 import { useItems } from "../../contexts/ItemsContextProvider"
-import { FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaTimes, FaArrowLeft, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import { LazyImage } from '../../helpers/LazyImage'
 import { useEffect, useState } from 'react'
-import GobackButton from '../../components/GobackButton'
 
 export default function ProductDetail(){
 
@@ -14,6 +13,7 @@ export default function ProductDetail(){
     const { loading, items } = useItems()
     const [ selectedItem, setSelectedItem ] = useState(null)
     const [ relatedItems, setRelatedItems ] = useState([])
+    const navigate = useNavigate()
     
    
     useEffect(() => {
@@ -32,11 +32,8 @@ export default function ProductDetail(){
                 sidebar
             </div>
             <div className='product-content'>
-                <div className="lg-hide">
-                    {selectedItem && <GobackButton path={`/products/category+${selectedItem.category}`} text='Details' />}
-                </div>
                 {selectedItem && 
-                    <div className='product-detal-container d-flex'>
+                    <div className='product-detal-container d-flex border'>
                         <div className="product-detal-image">
                             <LazyImage src={selectedItem.thumbnail} alt='' />
                             {/* <LazyImage src={`${process.env.REACT_APP_BACK_END_URL}${selectedItem.image}`} alt='' /> */}
@@ -47,7 +44,7 @@ export default function ProductDetail(){
                                 <p>{selectedItem.description}</p>
                                 <h3>Price: {selectedItem.price}</h3>
                             </div>
-                            <div className="mt-3">
+                            <div className="">
                                 <h5>Contacts & Address</h5>
                                 <div className="d-flex align-items-center mb-2">
                                     <FaMapMarkerAlt />
@@ -66,18 +63,25 @@ export default function ProductDetail(){
                                     <span className="mx-2">konsonak@gmail.com</span>
                                 </div>
                             </div>
+                            <div 
+                                className="back-btn-sm mt-2"
+                                onClick={() => navigate(`/products/${selectedItem.category}`)}
+                            >
+                                <FaArrowLeft />
+                                <span className="mx-2">Go Back</span>
+                            </div>
+                            <div 
+                                className="back-btn d-flex align-items-center justify-content-center rounded-circle sm-hide" 
+                                onClick={() => navigate(`/products/${selectedItem.category}`)}
+                            >
+                                <FaTimes />
+                            </div>
                         </div>
-                    </div>
-                }
-                {items.length >= 1 && 
-                    <div className='product-related-items'>
-                        <h4>Related Items</h4>
-                        <Items items={items} col='col4' />
                     </div>
                 }
                 {relatedItems.length >= 1 && 
                     <div className='product-related-items'>
-                        <h4>Related Items</h4>
+                        <h3 className='mb-3'>Related Items</h3>
                         <Items items={relatedItems} col='col4' />
                     </div>
                 }

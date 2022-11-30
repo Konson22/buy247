@@ -28,8 +28,7 @@
 .appbar-wraper .nav-button {
   padding: 0.4rem 1rem;
   margin-right: 0.5rem;
-  border: 1px solid var(--white);
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 .appbar-wraper .nav-icon {
   font-size: 1.5rem;
@@ -99,7 +98,7 @@
   .appbar-wraper .nav-button {
     padding: 0.3rem 0.6rem;
     margin: 0;
-    border: 1px solid var(--white);
+    background-color: var(--primary);
   }
   .appbar-wraper .nav-icon {
     margin-left: 0.8rem;
@@ -114,7 +113,6 @@
     flex: unset;
   }
   .appbar-wraper-top .logo-container img {
-    width: 5rem;
     height: 3.5rem;
   }
   .app-wraper-navigation {

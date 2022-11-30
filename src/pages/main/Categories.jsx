@@ -8,7 +8,7 @@ export default function Categories(){
             <div className="home-section-heading text-center">
                 <h1>We stock a wide range of products</h1>
                 <p>
-                    The Mission Store stocks a wide range of items, from gently used clothing to books, household items, electronics, toys and more.
+                    We stocks a wide range of items, from gently used electronics, clothing to books, household items, toys and more.
                 </p>
             </div>
             <div className="home-section-content categories-content">
