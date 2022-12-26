@@ -6,10 +6,10 @@ export default function Categories(){
     return(
         <div className='home-section categories-container'>
             <div className="home-section-heading text-center">
-                {/* <h1>We stock a wide range of products</h1> */}
-                <p>
+                <h1>Top Categories</h1>
+                {/* <p>
                     We stocks a wide range of items, from gently used electronics, clothing to books, household items, toys and more.
-                </p>
+                </p> */}
             </div>
             <div className="home-section-content categories-content">
                 {categDt.map((category, index) => (

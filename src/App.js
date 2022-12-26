@@ -1,32 +1,35 @@
+import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from "./components/navbar";
 import ScrollToTop from './helpers/ScrollToTop';
-import Main from './pages/main'
-import Products from './pages/products';
-import Upload from './pages/forms/Upload';
-import Login from './pages/forms/Login';
-import Register from './pages/forms/Register';
-import ProductDetail from './pages/products/ProductDetail';
-import ProductSearch from './pages/products/ProductSearch';
 
+const Main = lazy(() => import('./pages/main/Main'))
+const Products = lazy(() => import('./pages/products/Products'))
+const Upload = lazy(() => import('./pages/forms/Upload'))
+const Login = lazy(() => import('./pages/forms/Login'))
+const Register = lazy(() => import('./pages/forms/Register'))
+const ProductDetail = lazy(() => import('./pages/products/ProductDetail'))
+const ProductSearch = lazy(() => import('./pages/products/ProductSearch'))
 
 function App() {
   
   return (
     <div className='app-wraper'>
       <Navbar />
-    <div className='app-content'>
-      <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<Main />} />
-        <Route path='/upload' element={<Upload />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-        <Route path='/products/:category' element={<Products />} />
-        <Route path='products/search/:query' element={<ProductSearch />} />
-        <Route path='/product/detail/:itemId' element={<ProductDetail />} />
-      </Routes>
-    </div>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <div className='app-content'>
+          <ScrollToTop />
+          <Routes>
+            <Route path='/' element={<Main />} />
+            <Route path='/upload' element={<Upload />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/products/:category' element={<Products />} />
+            <Route path='products/search/:query' element={<ProductSearch />} />
+            <Route path='/product/detail/:itemId' element={<ProductDetail />} />
+          </Routes>
+        </div>
+      </Suspense>
     </div>
   );
 }

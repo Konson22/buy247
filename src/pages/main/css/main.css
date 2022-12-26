@@ -55,7 +55,7 @@
 }
 
 .home-section {
-  padding: 4rem 8%;
+  padding: 6rem 8%;
 }
 .home-section .home-section-heading {
   margin-bottom: 1.5rem;
@@ -77,7 +77,7 @@
   grid-template-columns: repeat(4, 1fr);
 }
 .categories-container .category-card {
-  height: 220px;
+  height: 200px;
   position: relative;
   text-decoration: none;
   background-size: cover;
@@ -100,9 +100,6 @@
 /************************************************************
     *** START OF PRODUCTS SECTION STYLE ***
 ************************************************************/
-.products-container {
-  background-color: var(--gray);
-}
 .products-container .my-btn {
   padding: 0.5rem 1rem !important;
   color: var(--primary);
@@ -212,7 +209,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .categories-container .category-card {
-    height: 120px;
+    height: 100px;
   }
   .categories-container .category-card-text {
     padding: 0.5rem;
@@ -220,12 +217,6 @@
   }
   .benefite-wraper {
     display: none !important;
-  }
-  /************************************************************
-      *** START OF PRODUCTS SECTION STYLE ***
-  ************************************************************/
-  .products-container {
-    background-color: var(--gray);
   }
   /************************************************************
       *** START OF FEAUTURES SECTION STYLE ***
@@ -236,6 +227,7 @@
   }
   .feature-container .feature-sidebar {
     flex: 1;
+    height: 250px;
   }
   .feature-container .feature-content {
     padding: 1rem;
@@ -248,7 +240,6 @@
     flex: 1;
   }
   .feature-container .feature-content .icon {
-    margin-right: 0.7rem;
-    font-size: 2.4rem;
+    display: none;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -18,13 +18,12 @@ export default function ProductDetail(){
    
     useEffect(() => {
         if(!loading && items.length >= 1){
-            const selected = items.filter(item => item.id.toString() === itemId)[0]
-            const related = selected ? items.filter(item => item.category === selected.category && item.id.toString() !== itemId) : []
+            const selected = items.filter(item => item._id.toString() === itemId)[0]
+            const related = selected ? items.filter(item => item.category === selected.category && item._id.toString() !== itemId) : []
             selected && setSelectedItem(selected)
             related.length >= 1 && setRelatedItems(related)
         }
     }, [itemId])
-
 
     return(
         <div className='product-container d-flex'>
@@ -36,7 +35,7 @@ export default function ProductDetail(){
                     <div className='product-detal-container d-flex border'>
                         <div className="product-detal-image">
                             <LazyImage src={selectedItem.thumbnail} alt='' />
-                            {/* <LazyImage src={`${process.env.REACT_APP_BACK_END_URL}${selectedItem.image}`} alt='' /> */}
+                            {/* <LazyImage src={image} alt='' /> */}
                         </div>
                         <div className="product-detal-text d-flex flex-column">
                             <div className="flex-grow-1">

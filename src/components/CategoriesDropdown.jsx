@@ -7,7 +7,7 @@ import { categDt } from '../assets/data'
 export default function CategoriesDropdown({color=''}){
     return(
         <div className='category-dropdown-wraper'>
-            <NavDropdown title='Categories' className='categories text-dark'>
+            <NavDropdown title='Filter' className='categories text-dark'>
                 <NavDropdown.Item>
                     <NavLink className='nav-link text-dark' to='/products/all'>All</NavLink>
                 </NavDropdown.Item>

@@ -6,6 +6,7 @@ import { categDt } from '../../assets/data'
 import Items from "../../components/Items"
 import { useEffect, useState } from 'react'
 import './css/products.css'
+import SpecialItems from "./SpecialItems"
 
 export default function Products(){
 
@@ -16,6 +17,7 @@ export default function Products(){
     const currentItems = (category === 'all' ) ? items : items.filter(item => {
         return subCategoryQuery ? item.sub_category === subCategoryQuery : item.category === category
     })
+
 
     useEffect(() => setSubCategoryQuery(''), [category])
 
@@ -46,10 +48,13 @@ export default function Products(){
                     {subcategoriesContent}
                 </div>
             </div>
-            <div className="page-body">
-                {loading && 'Loading...'}
-                {(!loading && errors) && 'error occures!'}
-                {currentItems.length >= 1 && <Items items={currentItems} /> }
+            <div className="products-wraper d-flex">
+                <SpecialItems />
+                <div className="products-content">
+                    {loading && 'Loading...'}
+                    {(!loading && errors) && 'error occures!'}
+                    {currentItems.length >= 1 && <Items items={currentItems} col='4' /> }
+                </div>
             </div>
         </main>
     )

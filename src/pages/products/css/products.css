@@ -2,10 +2,14 @@
   padding: 0.7rem 4%;
 }
 
-.product-sidebar {
+.special-items-wraper {
   margin-right: 1rem;
   flex-basis: 26%;
-  background-color: var(--gray);
+}
+.special-items-wraper .special-items-content {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  height: 400px;
 }
 
 .product-content {
@@ -61,48 +65,16 @@
   border: 1px solid #ccc;
 }
 
-.page-body {
+.products-wraper {
   padding: 0 4%;
 }
-
-.items-wraper {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(5, 1fr);
+.products-wraper .products-content {
+  flex: 1;
 }
-.items-wraper .item-card {
-  background-color: var(--white);
-}
-.items-wraper .item-card__text {
-  padding: 0.8rem;
-}
-.items-wraper .item-card__image {
-  height: 190px;
-  min-height: 190px;
-  max-height: 190px;
-}
-.items-wraper .img-placeholder {
-  height: 190px;
-  background-color: var(--white);
-}
-.items-wraper .img-placeholder .icon {
-  font-size: 7rem;
-  opacity: 0.3;
-}
-.items-wraper .item-card-btn {
-  width: 100%;
-  color: var(--white);
-  background-color: var(--primary) !important;
-  border: none;
-}
-
-.items-wraper.col4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-.items-wraper.col4 .item-card__image {
-  height: 170px;
-  min-height: 170px;
-  max-height: 170px;
+.products-wraper .products-sidebar {
+  margin-right: 1rem;
+  flex-basis: 25%;
+  background-color: #ccc;
 }
 
 @media screen and (max-width: 750px) {
@@ -122,51 +94,6 @@
   }
   .page-body {
     padding: 0 5%;
-  }
-  .items-wraper {
-    grid-gap: 0.5rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .items-wraper .item-card__text {
-    padding: 0.5rem;
-  }
-  .items-wraper .item-card__image {
-    height: 110px;
-    min-height: 110px;
-    max-height: 110px;
-  }
-  .items-wraper .item-card-footer {
-    flex-direction: column;
-  }
-  .items-wraper .btn-primary {
-    padding: 0.3rem 0.6rem;
-    width: 100%;
-  }
-  .items-wraper .img-placeholder {
-    height: 110px;
-    min-height: 110px;
-    max-height: 110px;
-  }
-  .items-wraper .img-placeholder .icon {
-    font-size: 6rem;
-  }
-  .items-wraper .item-card-btn {
-    padding: 0.3rem 0.6rem !important;
-    width: 100%;
-    color: var(--primary);
-    background-color: transparent !important;
-    border: 1px solid var(--primary) !important;
-  }
-  .items-wraper h5 {
-    font-size: 0.9rem;
-  }
-  .items-wraper.col4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .items-wraper.col4 .item-card__image {
-    height: 110px;
-    min-height: 110px;
-    max-height: 110px;
   }
   .product-container {
     padding: 0;

@@ -11,8 +11,8 @@
   src: url("../assets/fonts/Southmore.ttf");
 }
 :root {
-  --secondary: rgb(183, 178, 248);
   --primary:rgb(129, 122, 200);
+  --secondary: orangered;
   --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
   --gray:#eee;
   --white:#fff;
@@ -114,6 +114,46 @@ p {
   display: none;
 }
 
+.items-wraper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.items-wraper .item-card {
+  background-color: var(--white);
+}
+.items-wraper .item-card__text {
+  padding: 0.8rem;
+}
+.items-wraper .item-card__image {
+  height: 190px;
+  min-height: 190px;
+  max-height: 190px;
+}
+.items-wraper .img-placeholder {
+  height: 190px;
+  background-color: var(--white);
+}
+.items-wraper .img-placeholder .icon {
+  font-size: 7rem;
+  opacity: 0.3;
+}
+.items-wraper .item-card-btn {
+  width: 100%;
+  color: var(--white);
+  background-color: var(--primary) !important;
+  border: none;
+}
+
+.items-wraper.col4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.items-wraper.col4 .item-card__image {
+  height: 170px;
+  min-height: 170px;
+  max-height: 170px;
+}
+
 @media screen and (max-width: 750px) {
   .sm-hide {
     display: none !important;
@@ -130,5 +170,50 @@ p {
   .my-container {
     margin-bottom: 4rem;
     padding: 0 0.5rem;
+  }
+  .items-wraper {
+    grid-gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .items-wraper .item-card__text {
+    padding: 0.5rem;
+  }
+  .items-wraper .item-card__image {
+    height: 125px;
+    min-height: 125px;
+    max-height: 125px;
+  }
+  .items-wraper .item-card-footer {
+    flex-direction: column;
+  }
+  .items-wraper .btn-primary {
+    padding: 0.3rem 0.6rem;
+    width: 100%;
+  }
+  .items-wraper .img-placeholder {
+    height: 125px;
+    min-height: 125px;
+    max-height: 125px;
+  }
+  .items-wraper .img-placeholder .icon {
+    font-size: 6rem;
+  }
+  .items-wraper .item-card-btn {
+    padding: 0.3rem 0.6rem !important;
+    width: 100%;
+    color: var(--primary);
+    background-color: transparent !important;
+    border: 1px solid var(--primary) !important;
+  }
+  .items-wraper h5 {
+    font-size: 0.9rem;
+  }
+  .items-wraper.col4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .items-wraper.col4 .item-card__image {
+    height: 110px;
+    min-height: 110px;
+    max-height: 110px;
   }
 }/*# sourceMappingURL=global-styles.css.map */

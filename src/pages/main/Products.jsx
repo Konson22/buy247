@@ -11,7 +11,7 @@ export default function Products(){
     return(
         <div className='home-section products-container'>
             <div className="home-section-heading text-center">
-                <h1>Recently uploaded</h1>
+                <h1>Featured Items</h1>
             </div>
             <div className="home-section-content">
                 {loading && 'Loading...'}
