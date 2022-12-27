@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { useGlobalContext } from '../../contexts/GlobalContextProvider'
-import { FaBars, FaHome, FaUser, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { FaBars, FaUser, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa'
 import { categDt } from '../../assets/data'
 import CategoriesDropdown from '../CategoriesDropdown'
 import './css/navbar.css'
@@ -12,13 +12,13 @@ export default function Navbar(){
 
     const authUserActions = (
         <>
-            <NavLink className='nav-button sm-hide' to='/upload' >
+            <span className='nav-button px-4' onClick={() => setShowForm('upload')}>
                 <span className="sm-hide">Start salling</span>
                 <span className="lg-hide">Upload</span>
-            </NavLink>
-            <NavLink className="nav-icon lg-hide" to='/'>
+            </span>
+            {/* <NavLink className="nav-icon lg-hide" to='/'>
                 <FaHome />
-            </NavLink>
+            </NavLink> */}
             {profile ?
                 <button className='nav-button' onClick={() => setShowForm('login')}>Login</button> :
                 <NavLink className="navbar-avatar d-flex align-items-center" to='/account'>

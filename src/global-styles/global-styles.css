@@ -12,7 +12,7 @@
 }
 :root {
   --primary:rgb(129, 122, 200);
-  --secondary: orangered;
+  --secondary: rgb(0, 238, 255);
   --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
   --gray:#eee;
   --white:#fff;
@@ -51,6 +51,10 @@ h3 {
 
 p {
   margin-top: 0;
+}
+
+.btn:hover {
+  color: var(--white);
 }
 
 .heading-title {
@@ -169,7 +173,7 @@ p {
   }
   .my-container {
     margin-bottom: 4rem;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
   .items-wraper {
     grid-gap: 0.5rem;
@@ -179,9 +183,9 @@ p {
     padding: 0.5rem;
   }
   .items-wraper .item-card__image {
-    height: 125px;
-    min-height: 125px;
-    max-height: 125px;
+    height: 140px;
+    min-height: 140px;
+    max-height: 135px;
   }
   .items-wraper .item-card-footer {
     flex-direction: column;

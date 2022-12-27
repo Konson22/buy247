@@ -1,9 +1,9 @@
 
 
-export default function LoadingSpinner(){
+export function FormLoader(){
     return(
-        <div className='form-loader d-flex align-items-center justify-content-center'>
-            <div className="form-loader__content text-center">
+        <div className='spinner-loader-wraper d-flex align-items-center justify-content-center'>
+            <div className="spinner-loader__content text-center">
                 <img src={process.env.PUBLIC_URL+'/images/loader.gif'} alt='Loading...' />
                 <div className="mt-3">
                     <h5>Please wait...</h5>

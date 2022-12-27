@@ -14,7 +14,7 @@ export default function GlobalContextProvider({children}) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [profile, setProfile] = useState(null)
-  const [showForm, setShowForm] = useState(false)
+  const [showForm, setShowForm] = useState(null)
     
   useEffect(() => {
     setLoading(false)

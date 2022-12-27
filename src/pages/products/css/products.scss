@@ -17,6 +17,7 @@
 .product-content{
     flex:1;
     .product-detal-container{
+        display:flex;
         .product-detal-image{
             flex-basis:50%;
         }
@@ -106,15 +107,16 @@
     .product-container{
         padding: 0;
     }
+    
     .product-content{
         .product-detal-container{
             margin: .5rem;
             display: block !important;
             background-color: transparent;
             .product-detal-image{
-                height:250px;
-                min-height:250px;
-                max-height:250px;
+                height:auto;
+                min-height:auto;
+                max-height:auto;
                 width:100%;
             }
             .product-detal-text{

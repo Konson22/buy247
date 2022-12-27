@@ -15,6 +15,9 @@
 .product-content {
   flex: 1;
 }
+.product-content .product-detal-container {
+  display: flex;
+}
 .product-content .product-detal-container .product-detal-image {
   flex-basis: 50%;
 }
@@ -104,9 +107,9 @@
     background-color: transparent;
   }
   .product-content .product-detal-container .product-detal-image {
-    height: 250px;
-    min-height: 250px;
-    max-height: 250px;
+    height: auto;
+    min-height: auto;
+    max-height: auto;
     width: 100%;
   }
   .product-content .product-detal-container .product-detal-text {

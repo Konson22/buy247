@@ -10,7 +10,7 @@ export default function Items({items, col=''}){
                 <div className='item-card border' key={item._id}>
                     <div className="item-card__image">
                         <LazyImage src={item.thumbnail} alt='' />
-                        {/* <LazyImage src={image} alt='' /> */}
+                        {/* <LazyImage src={process.env.PUBLIC_URL+'/images/cars.jpg'} alt='' /> */}
                     </div>
                     <div className="item-card__text">
                         <h5 className='elips-text'>{item.title}</h5>

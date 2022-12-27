@@ -151,7 +151,7 @@ export const categDt = [
     },
     {
         text:'Properties',
-        url:'properties',
+        url:'groceries',
         image:process.env.PUBLIC_URL+'/images/property.jpg',
         subcategory:[
             'Houses',
