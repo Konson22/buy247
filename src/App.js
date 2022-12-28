@@ -4,7 +4,8 @@ import Navbar from "./components/navbar";
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
 
-const Main = lazy(() => import('./pages/main/Main'))
+// const Main = lazy(() => import('./pages/main/Main'))
+const Home = lazy(() => import('./pages/home/Home'))
 const Products = lazy(() => import('./pages/products/Products'))
 const Upload = lazy(() => import('./pages/forms/Upload'))
 const Login = lazy(() => import('./pages/forms/Login'))
@@ -25,7 +26,8 @@ function App() {
         <div className='app-content'>
           <ScrollToTop />
           <Routes>
-            <Route path='/' element={<Main />} />
+            {/* <Route path='/' element={<Main />} /> */}
+            <Route path='/' element={<Home />} />
             <Route path='/upload' element={<Upload />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />

@@ -13,9 +13,9 @@
 
 
 :root{
-    --primary:rgb(129, 122, 200);
-    --secondary: rgb(0, 238, 255);
-    --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
+    --bg-main:rgb(51, 66, 109);
+    --bg-light:rgb(84, 104, 161);
+    --secondary: rgb(196, 216, 15);
     --gray:#eee;
     --white:#fff;
 }
@@ -23,7 +23,7 @@
 body{
     font-family: 'SignikaNegative';
     color: rgb(139, 138, 138);
-    font-size: 18px;
+    // font-size: 18px;
 }
 img{
     width:100%;
@@ -82,15 +82,6 @@ p{
 }
 
 
-
-.back-button{
-    padding:.5rem .5rem .2rem .5rem;
-    .icon{
-        margin-top: -.2rem;
-        margin-right:1rem;
-        font-size:1.4rem;
-    }
-}
 .search-bar-container{
     height: 3rem;
     input, button{
@@ -139,9 +130,8 @@ p{
         }
     }
     .item-card-btn{
-        width: 100%;
         color:var(--white);
-        background-color: var(--primary) !important;
+        background-color: var(--bg-main) !important;
         border:none;
     }
 }
@@ -168,11 +158,7 @@ p{
         font-size:1rem;
     }
 
-    .app-content{
-        margin-top: 4rem;
-    }
     .my-container{
-        margin-bottom: 4rem;
         padding: 0 1rem;
     }
 
@@ -185,12 +171,9 @@ p{
             }
         }
         .item-card__image{
-            height: 140px;
-            min-height: 140px;
-            max-height: 135px;
-        }
-        .item-card-footer{
-            flex-direction: column;
+            height: 150px;
+            min-height: 150px;
+            max-height: 150px;
         }
         .btn-primary{
             padding: .3rem .6rem;
@@ -206,23 +189,16 @@ p{
         }
         .item-card-btn{
             padding: .3rem .6rem !important;
-            width: 100%;
-            color:var(--primary);
+            color:var(--bg-main);
             background-color:transparent !important;
-            border:1px solid var(--primary) !important;
+            border:1px solid var(--bg-light) !important;
         }
         h5{
             font-size: .9rem;
         }
     }
-    
     .items-wraper.col4{
         grid-template-columns: repeat(2, 1fr);
-        .item-card__image{
-            height: 110px;
-            min-height: 110px;
-            max-height: 110px;
-        }
     }
     
 }

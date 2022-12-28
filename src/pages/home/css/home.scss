@@ -1,0 +1,148 @@
+
+
+header{
+    padding:.5rem;
+    display: flex;
+    .hero-container{
+        flex:1;
+        height:26.5rem;
+        background-color: var(--gray);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../../assets/images/bck-5.jpg');
+        background-size: 100% 100%;
+    }
+    .categories-container{
+        margin-left: .5rem;
+        flex-basis:40%;
+        display:grid;
+        grid-gap:.5rem;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .category-content{
+        height:13rem;
+        color:inherit;
+        background-size: 100% 100%;
+        background-color: var(--gray);
+        text-decoration: none;
+    }
+}
+
+
+
+/********************************************************************
+    ******* FEATURE STYLE *******
+********************************************************************/
+.home-section{
+    padding:0 5%;
+}
+
+
+/********************************************************************
+    ******* FEATURE STYLE *******
+********************************************************************/
+.feature-container{
+    margin: 1.5rem 3%;
+    padding:.5rem;
+    border-radius: 6px;
+    background-color: var(--gray);
+    .feature-card{
+        padding:1rem;
+        padding:1rem;
+    }
+    .icon{
+        margin-right: 1rem;
+        font-size: 6rem;
+    }
+}
+
+
+/********************************************************************
+    ******* FEATUREED PRODUCTS STYLE *******
+********************************************************************/
+.featured-products{
+    padding:0 3%;
+    &__sidebar{
+        margin-right: 1rem;
+        flex-basis:30%;
+        .sidebar-content{
+            padding:1rem;
+            margin-bottom: 1rem;
+            background-color: var(--gray);
+
+        }
+    }
+    &__body{
+        flex:1;
+        .content{
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+
+.top-saler-content{
+    .saler-card{
+        margin-bottom: .5rem;
+    }
+    .logo{
+        width:100px;
+        height:100px;
+    }
+}
+
+
+
+@media screen and (max-width:950px){
+    header{
+        padding:0;
+        display: block;
+        .hero-container{
+            height:27vh;
+        }
+        .categories-container{
+            padding: .5rem;
+            margin: 0;
+            width: 100%;
+            grid-gap:.5rem;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .category-content{
+            height:6.5rem;
+        }
+    }
+    
+    /********************************************************************
+        ******* FEATURE STYLE *******
+    ********************************************************************/
+    .feature-container{
+        margin: 0;
+        background-color: var(--white);
+        flex-direction: column;
+        .feature-card{
+            margin-bottom: .6rem;
+            background-color: var(--gray);
+        }
+        .icon{
+            margin-right: 1rem;
+            font-size: 6rem;
+        }
+    }
+
+
+    /********************************************************************
+        ******* FEATUREED PRODUCTS STYLE *******
+    ********************************************************************/
+    .featured-products{
+        padding:0 .5rem;
+        flex-direction: column;
+        &__sidebar{
+            margin: .5rem 0 0 0;
+            width: 100%;
+        }
+        &__body{
+            flex:1;
+            .content{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

@@ -106,13 +106,13 @@
 }
 
 .has-error {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid rgb(250, 42, 42);
 }
 
 .my-button {
   width: 100%;
   color: var(--white);
-  background-color: var(--primary) !important;
+  background-color: var(--bg-main) !important;
 }
 .my-button:hover {
   color: var(--white) !important;

@@ -11,9 +11,9 @@
   src: url("../assets/fonts/Southmore.ttf");
 }
 :root {
-  --primary:rgb(129, 122, 200);
-  --secondary: rgb(0, 238, 255);
-  --gradient:linear-gradient(120deg, rgb(129, 122, 200), rgb(240, 181, 151));
+  --bg-main:rgb(51, 66, 109);
+  --bg-light:rgb(84, 104, 161);
+  --secondary: rgb(196, 216, 15);
   --gray:#eee;
   --white:#fff;
 }
@@ -21,7 +21,6 @@
 body {
   font-family: "SignikaNegative";
   color: rgb(139, 138, 138);
-  font-size: 18px;
 }
 
 img {
@@ -87,15 +86,6 @@ p {
   -webkit-line-clamp: 4;
 }
 
-.back-button {
-  padding: 0.5rem 0.5rem 0.2rem 0.5rem;
-}
-.back-button .icon {
-  margin-top: -0.2rem;
-  margin-right: 1rem;
-  font-size: 1.4rem;
-}
-
 .search-bar-container {
   height: 3rem;
 }
@@ -143,9 +133,8 @@ p {
   opacity: 0.3;
 }
 .items-wraper .item-card-btn {
-  width: 100%;
   color: var(--white);
-  background-color: var(--primary) !important;
+  background-color: var(--bg-main) !important;
   border: none;
 }
 
@@ -168,11 +157,7 @@ p {
   body {
     font-size: 1rem;
   }
-  .app-content {
-    margin-top: 4rem;
-  }
   .my-container {
-    margin-bottom: 4rem;
     padding: 0 1rem;
   }
   .items-wraper {
@@ -183,12 +168,9 @@ p {
     padding: 0.5rem;
   }
   .items-wraper .item-card__image {
-    height: 140px;
-    min-height: 140px;
-    max-height: 135px;
-  }
-  .items-wraper .item-card-footer {
-    flex-direction: column;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
   }
   .items-wraper .btn-primary {
     padding: 0.3rem 0.6rem;
@@ -204,20 +186,14 @@ p {
   }
   .items-wraper .item-card-btn {
     padding: 0.3rem 0.6rem !important;
-    width: 100%;
-    color: var(--primary);
+    color: var(--bg-main);
     background-color: transparent !important;
-    border: 1px solid var(--primary) !important;
+    border: 1px solid var(--bg-light) !important;
   }
   .items-wraper h5 {
     font-size: 0.9rem;
   }
   .items-wraper.col4 {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .items-wraper.col4 .item-card__image {
-    height: 110px;
-    min-height: 110px;
-    max-height: 110px;
   }
 }/*# sourceMappingURL=global-styles.css.map */

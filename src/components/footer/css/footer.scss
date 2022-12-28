@@ -2,7 +2,7 @@
 footer{
     padding:0 8%;
     color: var(--white);
-    background-color: var(--primary);
+    background-color: var(--bg-main);
 
     h3,h4,h5{
         color: var(--white);
@@ -40,12 +40,10 @@ footer{
             margin-left:2rem;
             width:55px;
             height:55px;
+            background-color: var(--bg-light);
             border:2px solid var(--white);
             font-size: 165%;
         }
-        // .icon{
-        //     font-size: 3rem;
-        // }
     }
 }
 
@@ -75,7 +73,6 @@ footer{
         padding:2rem 1rem;
     }
 
-
     .footer-top{
         padding:2rem 0;
         display:block;
@@ -95,13 +92,13 @@ footer{
         .socila-media-container{
             margin-top: 2rem;
             text-align: center;
-            justify-content: space-between;
             .social-media-icon-wraper{
-                margin:0;
+                margin:0 .5rem;
+                width:40px;
+                height:40px;
+                border:1px solid var(--white);
+                font-size: 150%;
             }
-            // .icon{
-            //     font-size: 2rem;
-            // }
         }
     }
 

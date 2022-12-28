@@ -12,7 +12,7 @@ export default function Footer(){
                         <h3>Subcribe</h3>
                         <div className="subcribe-form d-flex mb-2">
                             <input type="email" />
-                            <button className='button'>Subcribe</button>
+                            <button className='button text-white'>Subcribe</button>
                         </div>
                         <p>At the Mission Store, you can find quality products at affordable prices, even on a limited budget.</p>
                     </div>

@@ -12,7 +12,7 @@ export default function Register(){
     const [isLoading, setIsLoading] = useState(false);
     const [message, setMessage] = useState('');
 
-    const { setShowForm } = useGlobalContext()
+    const { setShowForm, setProfile } = useGlobalContext()
 
     const validate = Yup.object({
         name:Yup.string().required('Name Required'),
@@ -25,7 +25,10 @@ export default function Register(){
         setIsLoading(true)
         try{
             const response = await axiosInstance.post('/users/register', values).then(res => res)
-            response && setShowForm(null)
+            if(response.status === 201){
+                setShowForm(null)
+                setProfile(response.data)
+            }
         }catch(error){
             console.dir(error?.response?.data)
             setMessage(error?.response?.data)

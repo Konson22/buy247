@@ -43,7 +43,7 @@
         outline:none;
         color: var(--white);
         background-color: var(--secondary);
-        background-image: linear-gradient(180deg,var(--primary) 30%, rgb(142, 136, 218));
+        background-image: linear-gradient(180deg,var(--bg-main) 30%, rgb(142, 136, 218));
 
     }
     .header-btn{
@@ -80,10 +80,10 @@
     .categories-content{
         display:grid;
         grid-gap:1.4rem;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     .category-card{
-        height:200px;
+        height:270px;
         position: relative;
         text-decoration: none;
         background-size: cover;
@@ -109,12 +109,11 @@
     *** START OF PRODUCTS SECTION STYLE ***
 ************************************************************/
 .products-container{
-    // background-color: var(--gray);
     .my-btn{
         padding:.5rem 1rem !important;
-        color:var(--primary);
+        color:var(--bg-main);
         background-color: var(--white);
-        border:2px solid var(--primary) !important;
+        border:2px solid var(--bg-main) !important;
     }
 }
 
@@ -146,26 +145,6 @@
     }
 }
 
-
-.benefite-wraper{
-    padding:2rem;
-    margin: 2rem 4% 0 4%;
-    border-radius: 10px;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-self: space-between;
-    background-color: var(--primary);
-    background-image:var(--gradient);
-
-    .icon{
-        margin-right: 1rem;
-        font-size: 8rem;
-    }
-    h4{
-        color: var(--white);
-    }
-}
 
 @media screen and (max-width:750px){
     
