@@ -35,8 +35,8 @@ export default function ProductDetail(){
                 {selectedItem && 
                     <div className="detail-box">
                         <div className="detail-image">
-                            {/* <LazyImage src={selectedItem.thumbnail} alt='' /> */}
-                            <LazyImage src={process.env.PUBLIC_URL+'/images/cars.jpg'} alt='' />
+                            <LazyImage src={selectedItem.thumbnail} alt='' />
+                            {/* <LazyImage src={process.env.PUBLIC_URL+'/images/cars.jpg'} alt='' /> */}
                         </div>
                         <div className="detail-text p-2">
                             <div className="flex-grow-1">
