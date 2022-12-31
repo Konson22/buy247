@@ -11,6 +11,7 @@ export default function InputField({label, key='', ...props}){
             <input
                 className={(meta.touched && meta.error) ? 'has-error' : '' }
                 {...field}
+                placeholder={field.placeholder}
                 {...props}
             />
             <ErrorMessage component='div' name={field.name} className="error-card small text-danger mt-1" />

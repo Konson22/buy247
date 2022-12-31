@@ -14,10 +14,12 @@ export default function Navbar(){
 
     const authUserActions = (
         <>
-            <button className="nav-button btn" onClick={() => setShowForm('upload')}>
-                <span className="sm-hide">Start salling</span>
-                <span className="lg-hide">Upload</span>
+            <button className="nav-button btn sm-hide" onClick={() => setShowForm('upload')}>
+                Start salling
             </button>
+            <NavLink className="nav-button btn lg-hide" to='/upload'>
+                Upload
+            </NavLink>
             <div className="nav-icon-wraper">
                 <FiBell />
             </div>
@@ -64,7 +66,7 @@ export default function Navbar(){
             </div>
             {navigationsLinks}
             <div className="nav-buttons-wraper d-flex align-items-center">
-                {!profile ? authUserActions : guestUserActions}
+                {profile ? authUserActions : guestUserActions}
                 <div className="nav-icon-wraper menu-bar-icon" onClick={() => setIsOpen(!isOpen)}>
                     {!isOpen ? <FaBars /> : <FaTimes />}
                 </div>

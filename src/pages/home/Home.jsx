@@ -7,8 +7,13 @@ export default function Home() {
   return (
     <div>
         <Header />
-        <Features />
+        <div className="sm-hide">
+          <Features />
+        </div>
         <FeaturedProducts />
+        <div className="lg-hide">
+          <Features />
+        </div>
     </div>
   )
 }

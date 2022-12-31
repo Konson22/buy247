@@ -3,11 +3,36 @@ header {
   display: flex;
 }
 header .hero-container {
+  padding: 0 4rem;
   flex: 1;
   height: 26.5rem;
   background-color: var(--gray);
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../assets/images/bck-5.jpg");
   background-size: 100% 100%;
+}
+header .hero-container .hero-content h1 {
+  color: var(--white);
+  font-size: 3rem;
+}
+header .hero-container .search-container {
+  margin-top: 1.7rem;
+  height: 3rem;
+  background-color: var(--white);
+}
+header .hero-container .search-container input, header .hero-container .search-container button {
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+header .hero-container .search-container input {
+  padding: 0.6rem;
+  flex: 1;
+}
+header .hero-container .search-container button {
+  padding: 0 1rem;
+  color: var(--white);
+  background-color: var(--bg-main);
 }
 header .categories-container {
   margin-left: 0.5rem;
@@ -16,12 +41,24 @@ header .categories-container {
   grid-gap: 0.5rem;
   grid-template-columns: repeat(3, 1fr);
 }
-header .category-content {
+header .categories-container .category-content {
+  padding: 1rem;
   height: 13rem;
-  color: inherit;
+  color: #fff;
   background-size: 100% 100%;
+  position: relative;
   background-color: var(--gray);
   text-decoration: none;
+}
+header .categories-container .category-card-text {
+  display: flex;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.1333333333);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 /********************************************************************
@@ -61,7 +98,7 @@ header .category-content {
 }
 .featured-products__sidebar .sidebar-content {
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   background-color: var(--gray);
 }
 .featured-products__body {
@@ -72,11 +109,43 @@ header .category-content {
 }
 
 .top-saler-content .saler-card {
+  padding: 0.7rem;
   margin-bottom: 0.5rem;
+  display: flex;
+  background-color: rgb(245, 245, 245);
+}
+.top-saler-content .saler-card span {
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  background-color: rgb(245, 245, 245);
 }
 .top-saler-content .logo {
+  margin-right: 1.5rem;
   width: 100px;
   height: 100px;
+}
+
+/******************************************************************
+    ****** START OF CAROUSEL STYLE *****
+******************************************************************/
+.rec-carousel-wrapper {
+  position: relative !important;
+}
+
+.rec-arrow {
+  position: absolute;
+  z-index: 20 !important;
+  border: none !important;
+  font-size: 2rem !important;
+  box-shadow: none !important;
+}
+
+.rec-slider-container {
+  margin: 0 !important;
+}
+
+.rec-pagination {
+  display: none !important;
 }
 
 @media screen and (max-width: 950px) {
@@ -85,7 +154,34 @@ header .category-content {
     display: block;
   }
   header .hero-container {
-    height: 27vh;
+    padding: 4rem 1rem;
+    height: auto;
+  }
+  header .hero-container .hero-content {
+    width: 100%;
+  }
+  header .hero-container .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  header .hero-container .search-container {
+    margin-top: 1.7rem;
+    height: 3rem;
+    background-color: var(--white);
+  }
+  header .hero-container .search-container input, header .hero-container .search-container button {
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+  }
+  header .hero-container .search-container input {
+    padding: 0.6rem;
+    flex: 1;
+  }
+  header .hero-container .search-container button {
+    padding: 0 1rem;
+    color: var(--white);
+    background-color: var(--bg-main);
   }
   header .categories-container {
     padding: 0.5rem;
@@ -94,8 +190,9 @@ header .category-content {
     grid-gap: 0.5rem;
     grid-template-columns: repeat(3, 1fr);
   }
-  header .category-content {
-    height: 6.5rem;
+  header .categories-container .category-content {
+    height: 5.6rem;
+    border-radius: 5px;
   }
   /********************************************************************
       ******* FEATURE STYLE *******
@@ -107,7 +204,6 @@ header .category-content {
   }
   .feature-container .feature-card {
     margin-bottom: 0.6rem;
-    background-color: var(--gray);
   }
   .feature-container .icon {
     margin-right: 1rem;
@@ -124,10 +220,39 @@ header .category-content {
     margin: 0.5rem 0 0 0;
     width: 100%;
   }
+  .featured-products__sidebar .sidebar-content {
+    padding: 0;
+    background-color: var(--white);
+  }
   .featured-products__body {
     flex: 1;
   }
   .featured-products__body .content {
     margin-bottom: 1rem;
+  }
+  .top-saler-content .chevron-icon {
+    margin-left: 2rem;
+  }
+  .top-saler-content .saler-card {
+    padding: 0.6rem;
+    margin: 0;
+    display: block;
+    width: 97%;
+  }
+  .top-saler-content .saler-card span {
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    background-color: rgb(245, 245, 245);
+  }
+  .top-saler-content .logo {
+    margin: 0 auto;
+    width: 120px;
+    height: 120px;
+  }
+  .top-saler-content .rec-arrow {
+    display: none !important;
+  }
+  .top-saler-content .rec-slider-container {
+    margin: 0 !important;
   }
 }/*# sourceMappingURL=home.css.map */
