@@ -12,3 +12,14 @@ export function FormLoader(){
         </div>
     )
 }
+
+
+export function PageLoader(){
+    return(
+        <div className='page-loader-wraper d-flex align-items-center justify-content-center'>
+            <div className="content text-center">
+                <img src={process.env.PUBLIC_URL+'/images/loader.gif'} alt='Loading...' />
+            </div>
+        </div>
+    )
+}

@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import './css/products.css'
 import SpecialItems from "./SpecialItems"
 
+
 export default function Products(){
 
     const { category } = useParams()
@@ -23,10 +24,10 @@ export default function Products(){
 
     const subcategory = categDt.find(c => c.url === category)?.subcategory
 
-    const subcategoriesContent = (
+    const subcategoriesContent = subcategory && (
         <div className="suncategories-container flex-grow-1 d-flex align-items-center">
             <span onClick={() => setSubCategoryQuery('')}>All</span>
-            {subcategory && subcategory.map(subcat => (
+            {subcategory.map(subcat => (
                 <span key={subcat} onClick={() => setSubCategoryQuery(subcat)}>{subcat}</span>
             ))}
         </div>
@@ -49,11 +50,13 @@ export default function Products(){
                 </div>
             </div>
             <div className="products-wraper d-flex">
-                <SpecialItems />
+                <div className="products-sidebar sm-hide">
+                    <SpecialItems />
+                </div>
                 <div className="products-content">
                     {loading && 'Loading...'}
                     {(!loading && errors) && 'error occures!'}
-                    {currentItems.length >= 1 && <Items items={currentItems} col='4' /> }
+                    {(!loading && currentItems.length >= 1) ? <Items items={currentItems} col='4' /> : 'No items' }
                 </div>
             </div>
         </main>

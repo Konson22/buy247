@@ -20,7 +20,7 @@ export default function TopSallers(){
         <div className="sidebar-content top-sallers-content">
             <div className='d-flex align-items-center justify-content-between mb-2'>
                 <h4>Top Sallers</h4>
-                <div className='d-flex align-items-center'>
+                <div className='d-flex align-items-center lg-hide'>
                     <FaChevronLeft className='chevron-icon' />
                     <FaChevronRight className='chevron-icon' />
                 </div>

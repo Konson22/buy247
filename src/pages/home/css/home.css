@@ -42,13 +42,18 @@ header .categories-container {
   grid-template-columns: repeat(3, 1fr);
 }
 header .categories-container .category-content {
-  padding: 1rem;
   height: 13rem;
   color: #fff;
-  background-size: 100% 100%;
   position: relative;
   background-color: var(--gray);
   text-decoration: none;
+}
+header .categories-container .category-image-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 header .categories-container .category-card-text {
   display: flex;

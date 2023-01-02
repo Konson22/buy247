@@ -104,10 +104,6 @@ p {
   padding: 0 4%;
 }
 
-.lg-hide {
-  display: none;
-}
-
 .items-wraper {
   display: grid;
   grid-gap: 1rem;
@@ -147,12 +143,30 @@ p {
   max-height: 170px;
 }
 
+.app-wraper {
+  position: relative;
+}
+
+.page-loader-wraper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-loader-wraper .content {
+  margin-top: 5rem;
+}
+
+.lg-hide {
+  display: none !important;
+}
+
 @media screen and (max-width: 750px) {
   .sm-hide {
     display: none !important;
   }
   .lg-hide {
-    display: block;
+    display: block !important;
   }
   body {
     font-size: 1rem;

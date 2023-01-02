@@ -19,7 +19,8 @@ export default function Header() {
         </div>
         <div className="categories-container">
           {categDt.map((category, index) => (
-            <Link className="category-content" style={{backgroundImage:`url(${category.image})`}} key={index} to={`/products/${category.url}`}>
+            <Link className="category-content" key={index} to={`/products/${category.url}`}>
+              <img className='category-image-bg' src={category.image} alt='' />
               <div className='category-card-text'>{category.text}</div>
             </Link>
           ))}

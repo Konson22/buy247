@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import { PageLoader } from './components/Loaders';
 import Navbar from "./components/navbar";
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
@@ -21,7 +22,7 @@ function App() {
   return (
     <div className='app-wraper'>
       <Navbar />
-      <Suspense fallback={<h1>Loading...</h1>}>
+      <Suspense fallback={<PageLoader />}>
         { showForm && <FormsModal /> }
         <div className='app-content'>
           <ScrollToTop />

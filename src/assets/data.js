@@ -148,19 +148,7 @@ export const categDt = [
             'Bicyle',
             'Spare parts',
         ]
-    },
-    {
-        text:'Properties',
-        url:'groceries',
-        image:process.env.PUBLIC_URL+'/images/property.jpg',
-        subcategory:[
-            'Houses',
-            'Apartments',
-            'Plotes',
-            'Shops',
-            'Offices'
-        ]
-    },
+    }
 ]
 
 

@@ -23,7 +23,7 @@ export default function ItemsContextProvider({children}) {
       setLoading(true)
       try{
         // const results = await axios('https://dummyjson.com/products').then(res => res)
-        const results = await axiosInstance('/itemsd').then(res => res)
+        const results = await axiosInstance('/items').then(res => res)
         isMuted && setItems(results.data)
         // isMuted && setItems(results.data.products)
       }catch(error){
