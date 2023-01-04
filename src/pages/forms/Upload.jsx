@@ -2,7 +2,6 @@ import { useState } from 'react'
 import {categDt} from '../../assets/data'
 import { FaRegImages } from 'react-icons/fa'
 import { useItems } from '../../contexts/ItemsContextProvider'
-import {FormLoader} from '../../components/Loaders'
 import axiosInstance from '../../helpers/axiosInstance'
 import './css/forms.css'
 
@@ -14,6 +13,7 @@ export default function Upload(){
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState('')
     const [selectedCategory, setSelectedCategory] = useState('')
+    const [uploadPercentage, setUploadPercentage] = useState(0)
 
 
     const handleSubmit = async ev => {
@@ -21,7 +21,7 @@ export default function Upload(){
         setLoading(true)
         try {
             const formData = new FormData(ev.target)
-            const result = await axiosInstance.post('/items/upload', formData).then(res => res)
+            const result = await axiosInstance.post('/items/upload', formData, postOptions).then(res => res)
             setItems(prevItems => {
                 return [...prevItems, result.data]
             })
@@ -32,6 +32,22 @@ export default function Upload(){
         }
     }
     
+    //AXIOS HEADER OPTIONS
+  const postOptions = {
+    widthCredentials:true, 
+    withCredentials:'include',
+    onUploadProgress:percentageLoaded => {
+      const {total, loaded} = percentageLoaded
+      const percent = Math.floor((loaded / total) * 100)
+      percent <= 100 && setUploadPercentage(percent)
+    }
+  }
+
+
+  //RESET UPLOAD PERCENTAGE
+  uploadPercentage === 100 && setTimeout(() => setUploadPercentage(0), 4000)
+
+
     const handleCategory = category => {
         setSelectedCategory(category)
     }
@@ -40,11 +56,11 @@ export default function Upload(){
 
     return(
         <div className="upload-form">
-            {/* <UploadLoader /> */}
+            {loading && <UploadLoader percentage={uploadPercentage} />}
             <div className="text-center mb-3">
                 <h4>Upload you product</h4>
                 {message && <div className='p-1 bg-danger mt-2'>{message}</div>}
-                {loading && <FormLoader />}
+                {uploadPercentage === 0 && <div className='upload-complete d-flex align-items-center justify-content-center rounded-circle'></div>}
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="row">
@@ -108,16 +124,16 @@ export default function Upload(){
 }
 
 
-// function UploadLoader(){
-//     return(
-//         <div className='upload-loader-wraper'>
-//             <div className='upload-loader-content text-center'>
-//                 <span className='text'>Loading...</span>
-//                 <div className="loader">
-//                     <div className="fil"></div>
-//                 </div>
-//                 <span className='count'>76%</span>
-//             </div>
-//         </div>
-//     )
-// }
+function UploadLoader({percentage}){
+    return(
+        <div className='upload-loader-wraper'>
+            <div className='upload-loader-content text-center'>
+                <span className='text'>Loading...</span>
+                <div className="loader">
+                    <div className="fil" style={{width:`${percentage}%`}}></div>
+                </div>
+                <span className='count'>{percentage}%</span>
+            </div>
+        </div>
+    )
+}

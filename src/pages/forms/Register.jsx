@@ -30,7 +30,6 @@ export default function Register(){
                 setProfile(response.data)
             }
         }catch(error){
-            console.dir(error?.response?.data)
             setMessage(error?.response?.data)
         }finally{
             setIsLoading(false)
@@ -38,7 +37,7 @@ export default function Register(){
     }
 
     return(
-        <div className="upload-form">
+        <div className="login-form">
             {isLoading && <FormLoader />}
             <Formik
                 initialValues={{

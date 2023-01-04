@@ -5,15 +5,14 @@ import Navbar from "./components/navbar";
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
 
-// const Main = lazy(() => import('./pages/main/Main'))
 const Home = lazy(() => import('./pages/home/Home'))
-const Products = lazy(() => import('./pages/products/Products'))
+const Categories = lazy(() => import('./pages/products/Categories'))
+const SearchPage = lazy(() => import('./pages/products/SearchPage'))
 const Upload = lazy(() => import('./pages/forms/Upload'))
 const Login = lazy(() => import('./pages/forms/Login'))
 const FormsModal = lazy(() => import('./pages/forms/FormsModal'))
 const Register = lazy(() => import('./pages/forms/Register'))
 const ProductDetail = lazy(() => import('./pages/products/ProductDetail'))
-const ProductSearch = lazy(() => import('./pages/products/ProductSearch'))
 
 function App() {
   
@@ -27,13 +26,12 @@ function App() {
         <div className='app-content'>
           <ScrollToTop />
           <Routes>
-            {/* <Route path='/' element={<Main />} /> */}
             <Route path='/' element={<Home />} />
             <Route path='/upload' element={<Upload />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/products/:category' element={<Products />} />
-            <Route path='products/search/:query' element={<ProductSearch />} />
+            <Route path='/products/:category' element={<Categories />} />
+            <Route path='/search' element={<SearchPage />} />
             <Route path='/product/detail/:itemId' element={<ProductDetail />} />
           </Routes>
         </div>

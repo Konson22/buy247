@@ -15,10 +15,16 @@ header{
                 color:var(--white);
                 font-size:3rem;
             }
+            .header-button{
+                padding:.9rem 1.3rem !important;
+                margin-right: .8rem;
+                background-color: var(--bg-main) !important;
+                text-decoration: none;
+            }
         }
         .search-container{
             margin-top:1.7rem;
-            height:3rem;
+            height:3.5rem;
             background-color: var(--white);
             input,button{
                 height:100%;
@@ -110,7 +116,7 @@ header{
         .sidebar-content{
             padding:1rem;
             margin-bottom: 1.5rem;
-            background-color: var(--gray);
+            background-color: rgb(245, 245, 245);
         }
     }
     &__body{
@@ -127,11 +133,12 @@ header{
         padding:.7rem;
         margin-bottom: .5rem;
         display:flex;
-        background-color: rgb(245, 245, 245);
+        align-items: center;
+        background-color: var(--white);
         span{
-            margin-right: .5rem;
+            margin: .5rem;
             padding:.3rem .5rem;
-            background-color: rgb(245, 245, 245);
+            background-color: rgb(255, 255, 255);
         }
     }
     .logo{
@@ -176,28 +183,12 @@ header{
             .hero-content{
                 width:100%;
                 h1{
-                    font-size:2.2rem;
+                    font-size:2.1rem;
                 }
             }
-            .search-container{
-                margin-top:1.7rem;
-                height:3rem;
-                background-color: var(--white);
-                input,button{
-                    height:100%;
-                    outline:none;
-                    border:none;
-                    background-color: transparent;
-                }
-                input{
-                    padding:.6rem;
-                    flex:1;
-                }
-                button{
-                    padding:0 1rem;
-                    color: var(--white);
-                    background-color: var(--bg-main);
-                }
+            .header-button{
+                padding:.4rem .6rem !important;
+                margin:0 .4rem;
             }
         }
         .categories-container{
@@ -261,10 +252,11 @@ header{
             margin:0;
             display:block;
             width:97%;
+            background-color: rgb(245, 245, 245);
             span{
-                margin: 0;
+                margin: .5rem;
                 padding:.3rem .5rem;
-                background-color: rgb(245, 245, 245);
+                background-color: var(--white);
             }
         }
         .logo{

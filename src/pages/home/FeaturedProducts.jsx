@@ -18,7 +18,7 @@ export default function FeaturedProducts() {
             <div className="featured-products__body">
                 <div className="content">
                     <div className="content-header d-flex align-items-center justify-content-between">
-                        <h2>Items</h2>
+                        <h2>Featured Items</h2>
                         <div className="">
                             links
                         </div>

@@ -14,9 +14,15 @@ header .hero-container .hero-content h1 {
   color: var(--white);
   font-size: 3rem;
 }
+header .hero-container .hero-content .header-button {
+  padding: 0.9rem 1.3rem !important;
+  margin-right: 0.8rem;
+  background-color: var(--bg-main) !important;
+  text-decoration: none;
+}
 header .hero-container .search-container {
   margin-top: 1.7rem;
-  height: 3rem;
+  height: 3.5rem;
   background-color: var(--white);
 }
 header .hero-container .search-container input, header .hero-container .search-container button {
@@ -104,7 +110,7 @@ header .categories-container .category-card-text {
 .featured-products__sidebar .sidebar-content {
   padding: 1rem;
   margin-bottom: 1.5rem;
-  background-color: var(--gray);
+  background-color: rgb(245, 245, 245);
 }
 .featured-products__body {
   flex: 1;
@@ -117,12 +123,13 @@ header .categories-container .category-card-text {
   padding: 0.7rem;
   margin-bottom: 0.5rem;
   display: flex;
-  background-color: rgb(245, 245, 245);
+  align-items: center;
+  background-color: var(--white);
 }
 .top-saler-content .saler-card span {
-  margin-right: 0.5rem;
+  margin: 0.5rem;
   padding: 0.3rem 0.5rem;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(255, 255, 255);
 }
 .top-saler-content .logo {
   margin-right: 1.5rem;
@@ -166,27 +173,11 @@ header .categories-container .category-card-text {
     width: 100%;
   }
   header .hero-container .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
-  header .hero-container .search-container {
-    margin-top: 1.7rem;
-    height: 3rem;
-    background-color: var(--white);
-  }
-  header .hero-container .search-container input, header .hero-container .search-container button {
-    height: 100%;
-    outline: none;
-    border: none;
-    background-color: transparent;
-  }
-  header .hero-container .search-container input {
-    padding: 0.6rem;
-    flex: 1;
-  }
-  header .hero-container .search-container button {
-    padding: 0 1rem;
-    color: var(--white);
-    background-color: var(--bg-main);
+  header .hero-container .header-button {
+    padding: 0.4rem 0.6rem !important;
+    margin: 0 0.4rem;
   }
   header .categories-container {
     padding: 0.5rem;
@@ -243,11 +234,12 @@ header .categories-container .category-card-text {
     margin: 0;
     display: block;
     width: 97%;
+    background-color: rgb(245, 245, 245);
   }
   .top-saler-content .saler-card span {
-    margin: 0;
+    margin: 0.5rem;
     padding: 0.3rem 0.5rem;
-    background-color: rgb(245, 245, 245);
+    background-color: var(--white);
   }
   .top-saler-content .logo {
     margin: 0 auto;

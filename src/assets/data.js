@@ -109,9 +109,23 @@ export const categDt = [
         ]
     },
     {
-        text:'Fashion & Jewlary',
+        text:'Fashion',
         url:'fashion',
         image:process.env.PUBLIC_URL+'/images/fashion.jpg',
+        subcategory:[
+            'Cloths',
+            'Watch',
+            'Chose',
+            'Eye Glasses',
+            'Rings',
+            'Belt',
+            'Chains',
+        ]
+    },
+    {
+        text:'Jewlary',
+        url:'jewlary',
+        image:process.env.PUBLIC_URL+'/images/jewelary.jpg',
         subcategory:[
             'Cloths',
             'Watch',

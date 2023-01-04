@@ -1,5 +1,5 @@
 import Carousel from 'react-elastic-carousel'
-import { FaChevronRight, FaChevronLeft } from 'react-icons/fa'
+import { FaChevronRight, FaChevronLeft, FaTag } from 'react-icons/fa'
 
 const breakPoints = [
     {
@@ -16,6 +16,7 @@ const breakPoints = [
 
 
 export default function TopSallers(){
+
     return(
         <div className="sidebar-content top-sallers-content">
             <div className='d-flex align-items-center justify-content-between mb-2'>
@@ -26,22 +27,7 @@ export default function TopSallers(){
                 </div>
             </div>
             <div className="top-saler-content sm-hide">
-                {topSallersData.map(saler => (
-                    <div className='saler-card' key={saler._id}>
-                        <div className="logo rounded-circle">
-                            <img className="logo rounded-circle" src={saler.logo} alt='' />
-                        </div>
-                        <div className="flex-grow-1">
-                            <h5 className='m-0'>{saler.name}</h5>
-                            <p className='m-0'>{saler.about}</p>
-                            <div className="d-flex">
-                                {saler.categories.map(category => (
-                                    <span className='' key={category}>{category}</span>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                ))}
+                {topSallersData.map(saler => <SalarContent saler={saler} />)}
             </div>
             <div className='top-saler-content lg-hide'>
                 <Carousel 
@@ -49,26 +35,30 @@ export default function TopSallers(){
                     initialFirstItem={0}
                     className='carousel-wraper'
                 >
-                    {topSallersData.map(saler => (
-                        <div className='saler-card' key={saler._id}>
-                            <div className="logo rounded-circle">
-                                <img className="logo rounded-circle" src={saler.logo} alt='' />
-                            </div>
-                            <div className="flex-grow-1">
-                                <h5 className='m-0'>{saler.name}</h5>
-                                <p className='elips-text m-0'>{saler.about}</p>
-                                <div className="d-flex mt-2">
-                                    <span className=' bg-info text-white'>{saler.categories[0]}</span>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+                    {topSallersData.map(saler => <SalarContent saler={saler} />)}
                 </Carousel>
             </div>
         </div>
     )
 }
 
+function SalarContent({saler}){
+    return (
+        <div className='saler-card' key={saler._id}>
+            <div className="logo rounded-circle">
+                <img className="logo rounded-circle" src={saler.logo} alt='' />
+            </div>
+            <div className="flex-grow-1">
+                <h5 className='m-0'>{saler.name}</h5>
+                <p className='m-0'>{saler.about}</p>
+                <div className="d-flex align-items-center">
+                    
+                    <span className=''><FaTag /> {saler.categories[0]}</span>
+                </div>
+            </div>
+        </div>
+    )
+}
 
 const topSallersData = [
     {

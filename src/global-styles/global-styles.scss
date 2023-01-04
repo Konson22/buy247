@@ -139,6 +139,14 @@ p{
         max-height: 170px;
     }
 }
+.items-wraper.col5{
+    grid-template-columns: repeat(5, 1fr);
+    .item-card__image{
+        height: 170px;
+        min-height: 170px;
+        max-height: 170px;
+    }
+}
 
 .app-wraper{
     position: relative;
@@ -181,16 +189,15 @@ p{
 
     .items-wraper{
         grid-gap: .5rem;
-        grid-template-columns: repeat(2, 1fr);
         .item-card{
             &__text{
                 padding: .5rem;
             }
         }
         .item-card__image{
-            height: 150px;
-            min-height: 150px;
-            max-height: 150px;
+            height: 140px;
+            min-height: 140px;
+            max-height: 140px;
         }
         .btn-primary{
             padding: .3rem .6rem;
@@ -214,7 +221,7 @@ p{
             font-size: .9rem;
         }
     }
-    .items-wraper.col4{
+    .items-wraper.col4, .items-wraper.col5{
         grid-template-columns: repeat(2, 1fr);
     }
     

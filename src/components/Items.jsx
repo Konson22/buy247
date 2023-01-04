@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FaArrowRight } from 'react-icons/fa'
+// import { FaArrowRight } from 'react-icons/fa'
 import { LazyImage } from '../helpers/LazyImage'
 
 export default function Items({items, col=''}){
@@ -17,8 +17,8 @@ export default function Items({items, col=''}){
                         <h3>{item.price}$</h3>
                         <div className="item-card-footer d-flex align-items-center justify-content-between">
                             <Link className="btn item-card-btn rounded-0" to={`/product/detail/${item._id}`}>
-                                detail <span className="sm-hide"> & contacts</span>
-                                <FaArrowRight className='mx-2' />
+                                detail <span className="sm-hid"> & contacts</span>
+                                {/* <FaArrowRight className='mx-2' /> */}
                             </Link>
                         </div>
                     </div>

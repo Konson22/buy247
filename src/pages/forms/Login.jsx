@@ -26,7 +26,7 @@ export default function Login(){
         setIsLoading(true)
         try{
             const response = await axiosInstance.post('/users/login', values).then(res => res)
-            if(response.status === 201){
+            if(response.status === 200){
                 setShowForm(null)
                 setProfile(response.data)
             }
@@ -39,7 +39,7 @@ export default function Login(){
     }
 
     return(
-        <div className="upload-form">
+        <div className="login-form">
             {isLoading && <FormLoader />}
             <Formik
                 initialValues={{ email:'', password:'' }}

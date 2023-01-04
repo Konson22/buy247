@@ -9,7 +9,7 @@ export default function FormsModal() {
 
     return (
         <div className='form-modal d-flex align-items-center justify-content-center'>
-            <div className={`modal-content ${showForm}`}>
+            <div className='modal-content popup-form'>
                 <span className='close-button d-flex align-items-center justify-content-center rounded-circle' onClick={() => setShowForm(null)}>x</span>
                 { showForm === 'upload' && <Upload /> }
                 { showForm === 'login' && <Login /> }

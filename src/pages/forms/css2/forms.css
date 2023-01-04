@@ -1,0 +1,198 @@
+.form-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.0666666667);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+}
+
+.modal-content {
+  position: relative;
+  padding: 2.5rem 3rem;
+  background-color: var(--white);
+  border-radius: 10px;
+}
+.modal-content .icon-wraper {
+  margin: 0 1rem;
+  width: 45px;
+  height: 45px;
+  font-size: 150%;
+}
+.modal-content .close-button {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  color: red;
+  background-color: var(--white);
+  border: 2px solid red;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  z-index: 2;
+}
+
+.main-form-wraper {
+  background-color: #ccc;
+}
+
+.modal-content.login, .modal-content.register {
+  width: 38%;
+}
+
+.upload-loader-wraper, .spinner-loader-wraper {
+  padding: 0 3rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.0666666667);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.upload-loader-wraper .upload-loader-content {
+  padding: 3rem 2rem;
+  width: 100%;
+  background-color: var(--white);
+}
+.upload-loader-wraper .loader {
+  height: 25px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgb(230, 229, 231);
+}
+.upload-loader-wraper .fil {
+  height: 25px;
+  border-radius: 10px;
+  background-image: linear-gradient(to left, rgb(157, 52, 199), lightgreen);
+}
+.upload-loader-wraper .count {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.spinner-loader-wraper {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+}
+
+.upload-form {
+  padding: 1.5rem;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.upload-complete {
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  border: 2px solid green;
+}
+
+/**************************************************************
+    ****** START OF INPUT CONTAINER STYLE *******
+**************************************************************/
+.input-container {
+  margin-bottom: 1.5rem;
+}
+.input-container input, .input-container select, .input-container textarea {
+  padding: 0.5rem;
+  height: 3.3rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--white);
+}
+.input-container textarea {
+  height: 6rem;
+  resize: none;
+}
+
+.has-error {
+  border-bottom: 2px solid rgb(250, 42, 42);
+}
+
+.my-button {
+  width: 100%;
+  color: var(--white);
+  background-color: var(--bg-main) !important;
+}
+.my-button:hover {
+  color: var(--white) !important;
+}
+
+input[type=file] {
+  display: none;
+}
+
+.file-button {
+  background-color: var(--bg-light) !important;
+  color: var(--white);
+}
+
+.image-icon {
+  margin-right: 0.5rem;
+  font-size: 1.9rem;
+}
+
+@media screen and (max-width: 750px) {
+  .form-modal {
+    padding: 1.5rem;
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+  }
+  .modal-content {
+    padding: 0.1rem;
+  }
+  .modal-content .close-button {
+    width: 38px;
+    height: 38px;
+    font-size: 150%;
+  }
+  .modal-content.upload, .modal-content.login, .modal-content.register {
+    width: 100%;
+  }
+  .upload-loader-wraper, .spinner-loader-wraper {
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.0666666667);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .upload-form {
+    padding: 1.5rem 2rem;
+  }
+  /**************************************************************
+      ****** START OF INPUT CONTAINER STYLE *******
+  **************************************************************/
+  .input-container {
+    margin-bottom: 1.5rem;
+  }
+  .input-container input, .input-container select, .input-container textarea {
+    padding: 0.5rem;
+    height: 2.7rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--white);
+  }
+  .input-container textarea {
+    height: 6rem;
+    resize: none;
+  }
+}/*# sourceMappingURL=forms.css.map */
