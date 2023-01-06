@@ -23,7 +23,7 @@
 body{
     font-family: 'SignikaNegative';
     color: rgb(139, 138, 138);
-    // font-size: 18px;
+    font-size: 1.2rem;
 }
 img{
     width:100%;
@@ -36,15 +36,7 @@ h1,h2,h3,h4,h5,h6{
     color: rgb(117, 117, 117);
     font-family: 'SemiBold';
 }
-h1{
-    font-size: 2rem;
-}
-h2{
-    font-size: 1.7rem;
-}
-h3{
-    font-size: 1.4rem;
-}
+
 p{
     margin-top: 0;
 }
@@ -52,16 +44,6 @@ p{
 .btn{
     &:hover{
         color: var(--white);
-    }
-}
-.heading-title{
-    margin-bottom: 1.6rem;
-    h1{
-        font-size: 2.3rem;
-    }
-    h2{
-        font-size: 1.9rem;
-        font-family: 'SemiBold';
     }
 }
 
@@ -124,11 +106,11 @@ p{
             opacity: .3;
         }
     }
-    .item-card-btn{
-        color:var(--white);
-        background-color: var(--bg-main) !important;
-        border:none;
-    }
+}
+.item-card-btn{
+    color:var(--white);
+    background-color: var(--bg-main) !important;
+    border:none;
 }
 
 .items-wraper.col4{
@@ -162,10 +144,6 @@ p{
     }
 }
 
-
-
-
-
 .lg-hide{
     display: none !important;
 }
@@ -194,11 +172,6 @@ p{
                 padding: .5rem;
             }
         }
-        .item-card__image{
-            height: 140px;
-            min-height: 140px;
-            max-height: 140px;
-        }
         .btn-primary{
             padding: .3rem .6rem;
             width:100%;
@@ -211,18 +184,24 @@ p{
                 font-size: 6rem;
             }
         }
-        .item-card-btn{
-            padding: .3rem .6rem !important;
-            color:var(--bg-main);
-            background-color:transparent !important;
-            border:1px solid var(--bg-light) !important;
-        }
+        
         h5{
             font-size: .9rem;
         }
     }
+    .item-card-btn{
+        padding: .3rem .6rem !important;
+        color:var(--bg-main);
+        background-color:var(--white) !important;
+        border:1px solid var(--bg-light) !important;
+    }
     .items-wraper.col4, .items-wraper.col5{
         grid-template-columns: repeat(2, 1fr);
+        .item-card__image{
+            height: 130px;
+            min-height: 130px;
+            max-height: 130px;
+        }
     }
     
 }

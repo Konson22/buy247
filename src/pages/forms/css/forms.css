@@ -72,9 +72,10 @@ input[type=file] {
   width: 45px;
   height: 45px;
   cursor: pointer;
+  font-size: 120%;
   color: red;
-  background-color: var(--white);
-  border: 2px solid red;
+  background-color: var(--gray);
+  border: 1px solid red;
   position: absolute;
   top: -16px;
   right: -16px;
@@ -82,7 +83,12 @@ input[type=file] {
 }
 
 .popup-form {
-  width: 45%;
+  padding: 2rem 3rem;
+  width: 40%;
+}
+
+.popup-form.upload {
+  width: 50%;
 }
 
 .main-form-wraper {
@@ -106,7 +112,6 @@ input[type=file] {
 
 .upload-form {
   margin: 0 auto;
-  padding: 2rem;
   position: relative;
 }
 .upload-form .upload-loader-wraper .upload-loader-content {

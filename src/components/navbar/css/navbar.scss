@@ -61,7 +61,7 @@
     }
 }
 
-.nav-icon-wraper.menu-bar-icon{
+.nav-icon-wraper.menu-bar-icon, .home-icon{
     display: none;
 }
 
@@ -70,7 +70,14 @@
         display: flex;
     }
     .appbar-wraper{
-        padding:.5rem;
+        padding:0 .5rem;
+        height: 3.5rem;
+        .nav-icon-wraper{
+            margin-right:1.2rem;
+            width:2.5rem !important;
+            height:2.5rem !important;
+            font-size: 130%;
+        }
     }
 
     .logo-wraper{
@@ -78,21 +85,22 @@
         flex:1;
         img{
             margin-right: .7rem;
-            height:3rem;
+            height:2.7rem;
             width:4.5rem;
         }
     }
 
     .nav-link-wraper{
+        padding-top:4rem;
         height:100vh;
         width:100%;
-        background-color: var(--bg-light);
+        background-color: var(--bg-main);
         position:fixed;
-        top: 3.7rem;
+        top: 0;
         left:0;
         z-index: 150;
         transform: translateX(-100%);
-        transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
         ul{
             flex-direction: column;
             li{
@@ -108,145 +116,11 @@
         .nav-button{
             padding:.3rem .5rem !important
         }
-        .nav-icon-wraper{
-            margin-left: .5rem;
-            width:35px;
-            height:35px;
-            font-size: 130%;
-        }
-        .nav-icon-wraper.menu-bar-icon{
-            display: flex;
-        }
+        
+    }
+    .nav-icon-wraper.menu-bar-icon, .home-icon{
+        display: flex;
+        z-index: 170;
     }
 
 }
-// .nav-link-wraper{
-//     padding-bottom: .5rem;
-// }
-// .appbar-wraper{
-//     width: 100%;
-    // color:var(--white);
-    // background-color: var(--primary);
-    // background-size: cover;
-    // position: sticky;
-    // top: 0;
-    // left: 0;
-    // z-index: 100;
-    // .nav-link, .nav-icon, .nav-button, .navbar-avatar{
-    //     text-decoration: none;
-    //     color:var(--white);
-    //     cursor: pointer;
-    // }
-//     .nav-link:hover, .nav-link:focus{
-//         color:var(--white);
-//     }
-//     .navbar-avatar{
-//         margin-left: .8rem;
-//         &__image{
-//             margin-right: .5rem;
-//             width:37px;
-//             height:37px;
-//         }
-//     }
-//     .nav-button{
-//         padding: .4rem 1rem;
-//         margin-right: .5rem;
-//         background-color:var(--secondary);
-//     }
-//     .nav-icon{
-//         font-size: 1.5rem;
-//     }
-//     .dropdown-toggle.nav-link{
-//         padding: .4rem .8rem;
-//         border:1px solid var(--white);
-//     }
-// }
-
-// .appbar-wraper-top{
-//     padding: 1.7rem 3%;
-//     .logo-container{
-//         flex:1;
-//         img{
-//             width: 7rem;
-//             height: 4rem;
-//         }
-//     }
-//     .navbar-actions-container{
-//         flex:1;
-//     }
-//     .subcribe-container{
-//         flex:1;
-//         background-color: var(--white);
-//         button{
-//             background-color: var(--secondary);
-//         }
-//     }
-//     .social-media-container{
-//         span{
-//             margin-top: -.5rem;
-//             margin-left: 1rem;
-//             font-size:2rem;
-//         }
-//     }
-// }
-
-// .app-wraper-navigation{
-//     padding: .7rem 3%;
-//     border-top:2px solid rgb(175, 170, 250);
-//     border-bottom:2px solid rgb(175, 170, 250);
-//     background-image:var(--gradient);
-//     background-image: linear-gradient(180deg, rgb(142, 136, 218), var(--primary) 50%, rgb(142, 136, 218));
-
-// }
-
-// .lg-auth-buttons{
-//     display:none;
-// }
-
-// .sm-auth-buttons{
-//     display:flex;
-// }
-// @media screen and (max-width: 750px){
-
-//     .lg-auth-buttons{
-//         display:flex;
-//         align-items: center;
-//     }
-//     .sm-auth-buttons{
-//         display:none;
-//     }
-//     .appbar-wraper{
-//         position: fixed;
-//         background-color: var(--gray);
-//         .nav-link{
-//             color:var(--white);
-//         }
-//         .nav-button{
-//             padding: .3rem .6rem;
-//             margin: 0;
-//             background-color:var(--primary);
-//         }
-//         .nav-icon{
-//             margin-left: .8rem;
-//             font-size: 1.5rem;
-//             color: var(--primary);
-//         }
-//     }
-
-//     .appbar-wraper-top{
-//         padding: 0 .5rem;
-//         height: 4rem;
-//         .logo-container{
-//             flex: unset;
-//             img{
-//                 // width: 6rem;
-//                 height: 3.5rem;
-//             }
-//         }
-//     }
-
-//     .app-wraper-navigation{
-//         padding: 0 3%;
-//     }
-// }
-

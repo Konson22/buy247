@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useGlobalContext } from '../../contexts/GlobalContextProvider'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { FiBell, FiHome, FiUser } from 'react-icons/fi'
+import { FiBell, FiUser } from 'react-icons/fi'
 import { categDt } from '../../assets/data'
 import './css/navbar.css'
 import { useState } from 'react'
@@ -41,10 +41,23 @@ export default function Navbar(){
         <div className={`nav-link-wraper ${isOpen ? 'show' : ''}`}>
             <ul className='d-flex'>
                 <li>
-                    <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>
-                        Home
+                    <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>Home</NavLink>
+                </li>
+                {/* <li>
+                    <NavLink className='my-link' to='/products/all' onClick={() => setIsOpen(!isOpen)}>
+                        Shop
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>
+                        Services
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>
+                        About
+                    </NavLink>
+                </li> */}
                 {categDt.map((link, index) => (
                     <li key={index}>
                         <NavLink className='my-link' to={`/products/${link.url}`} onClick={() => setIsOpen(!isOpen)}>
@@ -59,17 +72,22 @@ export default function Navbar(){
     return(
         <nav className='appbar-wraper d-flex align-items-center justify-content-between'>
             <div className="logo-wraper d-flex align-items-center">
-                <img src={process.env.PUBLIC_URL+'/images/pngwing.com.png'} alt='' />
-                <NavLink className="nav-icon-wraper menu-bar-icon" to='/'>
-                    <FiHome />
-                </NavLink>
-            </div>
-            {navigationsLinks}
-            <div className="nav-buttons-wraper d-flex align-items-center">
-                {profile ? authUserActions : guestUserActions}
                 <div className="nav-icon-wraper menu-bar-icon" onClick={() => setIsOpen(!isOpen)}>
                     {!isOpen ? <FaBars /> : <FaTimes />}
                 </div>
+                <img src={process.env.PUBLIC_URL+'/images/pngwing.com.png'} alt='' />
+            </div>
+            {navigationsLinks}
+            {/* <div className="d-flex align-items-center">
+                <div className="search-bar-container"></div>
+                <div className="categories-container"></div>
+            </div> */}
+            <div className="nav-buttons-wraper d-flex align-items-center">
+                {/* <NavLink className="nav-icon-wraper home-icon" to='/'>
+                    <FiHome />
+                </NavLink> */}
+                {profile ? authUserActions : guestUserActions}
+                
             </div>
         </nav>
     )

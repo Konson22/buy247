@@ -76,65 +76,60 @@ header .categories-container .category-card-text {
     ******* FEATURE STYLE *******
 ********************************************************************/
 .home-section {
-  padding: 0 5%;
+  padding: 2rem 10%;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+}
+.section-title h1 {
+  margin: 0;
 }
 
 /********************************************************************
     ******* FEATURE STYLE *******
 ********************************************************************/
-.feature-container {
-  margin: 1.5rem 3%;
-  padding: 0.5rem;
-  border-radius: 6px;
-  background-color: var(--gray);
+.feature-container .section-body {
+  display: grid;
+  grid-column-gap: 0.6rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 .feature-container .feature-card {
-  padding: 1rem;
-  padding: 1rem;
+  padding: 1.5rem;
+  background-color: var(--gray);
 }
 .feature-container .icon {
   margin-right: 1rem;
-  font-size: 6rem;
+  font-size: 2.6rem;
 }
 
 /********************************************************************
     ******* FEATUREED PRODUCTS STYLE *******
 ********************************************************************/
-.featured-products {
-  padding: 0 3%;
+.top-saler-content {
+  padding: 5rem 10%;
+  background-color: var(--gray);
 }
-.featured-products__sidebar {
-  margin-right: 1rem;
-  flex-basis: 30%;
-}
-.featured-products__sidebar .sidebar-content {
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  background-color: rgb(245, 245, 245);
-}
-.featured-products__body {
-  flex: 1;
-}
-.featured-products__body .content {
-  margin-bottom: 1.5rem;
-}
-
 .top-saler-content .saler-card {
   padding: 0.7rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  align-items: center;
   background-color: var(--white);
+  width: 97%;
 }
 .top-saler-content .saler-card span {
   margin: 0.5rem;
   padding: 0.3rem 0.5rem;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--gray);
 }
 .top-saler-content .logo {
-  margin-right: 1.5rem;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 0.8rem;
+}
+.top-saler-content .rec-arrow-left {
+  left: -2rem;
+}
+.top-saler-content .rec-arrow-right {
+  right: -2rem;
 }
 
 /******************************************************************
@@ -150,6 +145,7 @@ header .categories-container .category-card-text {
   border: none !important;
   font-size: 2rem !important;
   box-shadow: none !important;
+  background-color: transparent !important;
 }
 
 .rec-slider-container {
@@ -175,8 +171,8 @@ header .categories-container .category-card-text {
   header .hero-container .hero-content h1 {
     font-size: 2.1rem;
   }
-  header .hero-container .header-button {
-    padding: 0.4rem 0.6rem !important;
+  header .hero-container .hero-content .header-button {
+    padding: 0.5rem 0.6rem !important;
     margin: 0 0.4rem;
   }
   header .categories-container {
@@ -193,23 +189,34 @@ header .categories-container .category-card-text {
   /********************************************************************
       ******* FEATURE STYLE *******
   ********************************************************************/
-  .feature-container {
-    margin: 0;
-    background-color: var(--white);
-    flex-direction: column;
+  .home-section {
+    padding: 2rem 0.5rem;
+  }
+  .section-title {
+    margin-bottom: 0.8rem;
+  }
+  .section-title h1 {
+    font-size: 1.7rem;
+  }
+  /********************************************************************
+      ******* FEATURE STYLE *******
+  ********************************************************************/
+  .feature-container .section-body {
+    display: block;
   }
   .feature-container .feature-card {
-    margin-bottom: 0.6rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
   }
   .feature-container .icon {
-    margin-right: 1rem;
-    font-size: 6rem;
+    margin-right: 0.6rem;
+    font-size: 2.5rem;
   }
   /********************************************************************
       ******* FEATUREED PRODUCTS STYLE *******
   ********************************************************************/
   .featured-products {
-    padding: 0 0.5rem;
+    padding: 0 0.3rem;
     flex-direction: column;
   }
   .featured-products__sidebar {
@@ -226,30 +233,30 @@ header .categories-container .category-card-text {
   .featured-products__body .content {
     margin-bottom: 1rem;
   }
-  .top-saler-content .chevron-icon {
-    margin-left: 2rem;
+  .top-saler-content {
+    padding: 1rem 0.5rem;
+    background-color: var(--white);
   }
   .top-saler-content .saler-card {
-    padding: 0.6rem;
-    margin: 0;
-    display: block;
-    width: 97%;
-    background-color: rgb(245, 245, 245);
+    padding: 0.5rem;
+    background-color: var(--gray);
   }
   .top-saler-content .saler-card span {
     margin: 0.5rem;
     padding: 0.3rem 0.5rem;
-    background-color: var(--white);
+    background-color: rgb(255, 255, 255);
   }
   .top-saler-content .logo {
-    margin: 0 auto;
-    width: 120px;
     height: 120px;
   }
-  .top-saler-content .rec-arrow {
+  .rec-arrow {
     display: none !important;
   }
-  .top-saler-content .rec-slider-container {
-    margin: 0 !important;
+  .item-slider-content .item-slider-card {
+    margin: 0 0.3rem;
+    background-color: rgb(245, 245, 245);
+  }
+  .item-slider-content .item-slider-card .image {
+    height: 140px;
   }
 }/*# sourceMappingURL=home.css.map */

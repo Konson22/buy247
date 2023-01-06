@@ -25,7 +25,7 @@ export default function Login(){
     const handleSubmit = async values => {
         setIsLoading(true)
         try{
-            const response = await axiosInstance.post('/users/login', values).then(res => res)
+            const response = await axiosInstance.post('/auth/login', values).then(res => res)
             if(response.status === 200){
                 setShowForm(null)
                 setProfile(response.data)

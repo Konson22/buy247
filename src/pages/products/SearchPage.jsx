@@ -44,7 +44,7 @@ export default function SearchPage(){
                 {loading && 'Loading...'}
                 {(!loading && errors) && 'error occures!'}
                 {(searchResults.length >= 1) ?
-                    <Items items={searchResults} col='4' /> : 
+                    <Items items={searchResults} col='col5' /> : 
                     'Your Search not found...'
                 }
             </div>

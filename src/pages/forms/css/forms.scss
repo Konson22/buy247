@@ -55,7 +55,6 @@ input[type="file"]{
 
 .modal-content{
     position:relative;
-    // padding:2.5rem 3rem;
     background-color: var(--white);
     border-radius: 10px;
     .icon-wraper{
@@ -68,9 +67,10 @@ input[type="file"]{
         width:45px;
         height:45px;
         cursor: pointer;
+        font-size: 120%;
         color: red;
-        background-color: var(--white);
-        border:2px solid red;
+        background-color: var(--gray);
+        border:1px solid red;
         position:absolute;
         top:-16px;
         right:-16px;
@@ -79,7 +79,11 @@ input[type="file"]{
 }
 
 .popup-form{
-    width:45%;
+    padding:2rem 3rem;
+    width:40%;
+}
+.popup-form.upload{
+    width:50%;
 }
 
 
@@ -104,7 +108,6 @@ input[type="file"]{
 
 .upload-form{
     margin: 0 auto;
-    padding:2rem;
     position: relative;
     .upload-loader-wraper{
         .upload-loader-content{

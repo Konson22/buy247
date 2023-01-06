@@ -64,11 +64,11 @@ export default function Upload(){
             </div>
             <form onSubmit={handleSubmit}>
                 <div className="row">
-                    <div className='input-container'>
+                    <div className='input-container col-md-8'>
                         <label htmlFor="title">Title</label>
                         <input name='title' type="text" placeholder='Title/Name/Model/' />
                     </div>
-                    <div className='input-container col-md-6'>
+                    <div className='input-container col-md-4'>
                         <label>Select category</label>
                         <select name='category' onChange={e => handleCategory(e.target.value)}>
                             {categDt?.map(category => (
@@ -79,7 +79,7 @@ export default function Upload(){
                         </select>
                     </div>
                     {/* subcategry */}
-                    <div className='input-container col-md-6'>
+                    <div className='input-container col-md-4'>
                         <label>Sub category</label>
                         <select name='sub_category'>
                             {(subcategories && subcategories.subcategory) ? subcategories.subcategory.map(opt => (
@@ -90,12 +90,12 @@ export default function Upload(){
                         </select>
                     </div>
                     {/* Set price */}
-                    <div className='input-container col-md-6'>
+                    <div className='input-container col-md-4'>
                         <label htmlFor="price">Set Price</label>
                         <input name='price' type="text" placeholder='Price' />
                     </div>
                     {/* Currency */}
-                    <div className='input-container col-md-6'>
+                    <div className='input-container col-md-4'>
                         <label htmlFor="currency">Currency</label>
                         <select name='currency'>
                             <option value='USD'>USD</option>

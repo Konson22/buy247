@@ -1,6 +1,7 @@
 import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { PageLoader } from './components/Loaders';
+import Footer from './components/footer';
 import Navbar from "./components/navbar";
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
@@ -34,6 +35,7 @@ function App() {
             <Route path='/search' element={<SearchPage />} />
             <Route path='/product/detail/:itemId' element={<ProductDetail />} />
           </Routes>
+          <Footer />
         </div>
       </Suspense>
     </div>
