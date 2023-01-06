@@ -42,8 +42,8 @@ export default function FeaturedProducts() {
                             {items.map(item => (
                                 <div className='item-slider-card' key={item._id}>
                                     <div className="image">
-                                        {/* <LazyImage src={item.thumbnail} alt='' /> */}
-                                        <LazyImage src={process.env.PUBLIC_URL+'/images/cars.jpg'} alt='' />
+                                         <LazyImage src={item.thumbnail} alt='' />
+                                       {/* <LazyImage src={process.env.PUBLIC_URL+'/images/cars.jpg'} alt='' /> */}
                                     </div>
                                     <div className="item-card__text p-2 pb-4">
                                         <h5 className='elips-text'>{item.title}</h5>
