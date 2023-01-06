@@ -1,5 +1,5 @@
 import Header from './Header'
-import FeaturedProducts from './FeaturedProducts'
+import FeaturedItems from './FeaturedItems'
 import Features from './Features'
 import './css/home.css'
 import TopSallers from './TopSallers'
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <FeaturedProducts />
+      <FeaturedItems />
       <TopSallers />
       <Features />
     </div>

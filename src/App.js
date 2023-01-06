@@ -2,7 +2,7 @@ import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { PageLoader } from './components/Loaders';
 import Footer from './components/footer';
-import Navbar from "./components/navbar";
+import Navbar from "./components/appbar";
 import { useGlobalContext } from './contexts/GlobalContextProvider';
 import ScrollToTop from './helpers/ScrollToTop';
 

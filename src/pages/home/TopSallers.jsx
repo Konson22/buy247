@@ -1,4 +1,4 @@
-import { FaTag } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaTag } from 'react-icons/fa'
 import Carousel from 'react-elastic-carousel'
 
 const breakPoints = [
@@ -19,8 +19,12 @@ export default function TopSallers(){
 
     return(
         <div className="top-saler-content">
-            <div className="section-title">
+            <div className="section-title d-flex align-items-center justify-content-between">
                 <h1>Top Sallers</h1>
+                <div className="d-flex align-items-center">
+                    <FaChevronLeft className='chevron-icon' />
+                    <FaChevronRight className='chevron-icon' />
+                </div>
             </div>
             <div className="section-body">
                 <Carousel 

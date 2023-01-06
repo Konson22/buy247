@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import {categDt} from '../../assets/data'
+import { categories } from '../../assets/data'
 import { FaRegImages } from 'react-icons/fa'
 import { useItems } from '../../contexts/ItemsContextProvider'
 import axiosInstance from '../../helpers/axiosInstance'
@@ -52,7 +52,7 @@ export default function Upload(){
         setSelectedCategory(category)
     }
 
-    const subcategories = categDt.find(c => c.url === selectedCategory)
+    const subcategories = categories.find(c => c.url === selectedCategory)
 
     return(
         <div className="upload-form">
@@ -71,7 +71,7 @@ export default function Upload(){
                     <div className='input-container col-md-4'>
                         <label>Select category</label>
                         <select name='category' onChange={e => handleCategory(e.target.value)}>
-                            {categDt?.map(category => (
+                            {categories?.map(category => (
                                 <option value={category.url} key={category.url}>
                                     {category.text}
                                 </option>

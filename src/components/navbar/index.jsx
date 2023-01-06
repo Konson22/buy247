@@ -3,6 +3,7 @@ import { useGlobalContext } from '../../contexts/GlobalContextProvider'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FiBell, FiUser } from 'react-icons/fi'
 import { categDt } from '../../assets/data'
+import { NavDropdown } from 'react-bootstrap'
 import './css/navbar.css'
 import { useState } from 'react'
 
@@ -43,7 +44,7 @@ export default function Navbar(){
                 <li>
                     <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>Home</NavLink>
                 </li>
-                {/* <li>
+                <li>
                     <NavLink className='my-link' to='/products/all' onClick={() => setIsOpen(!isOpen)}>
                         Shop
                     </NavLink>
@@ -57,14 +58,14 @@ export default function Navbar(){
                     <NavLink className='my-link' to='/' onClick={() => setIsOpen(!isOpen)}>
                         About
                     </NavLink>
-                </li> */}
-                {categDt.map((link, index) => (
+                </li>
+                {/* {categDt.map((link, index) => (
                     <li key={index}>
                         <NavLink className='my-link' to={`/products/${link.url}`} onClick={() => setIsOpen(!isOpen)}>
                             {link.text}
                         </NavLink>
                     </li>
-                ))}
+                ))} */}
             </ul>
         </div>
     )
@@ -78,10 +79,21 @@ export default function Navbar(){
                 <img src={process.env.PUBLIC_URL+'/images/pngwing.com.png'} alt='' />
             </div>
             {navigationsLinks}
-            {/* <div className="d-flex align-items-center">
-                <div className="search-bar-container"></div>
-                <div className="categories-container"></div>
-            </div> */}
+            <div className="search-container d-flex align-items-center">
+                <div className="search-bar d-flex align-items-center">
+                    <input type="search" placeholder='Search' />
+                    <button type="submit">Search</button>
+                </div>
+                <div className="categories">
+                    <NavDropdown title='Categories'>
+                        {categDt.map((link, index) => (
+                            <NavDropdown.Item key={index}>
+                                {link.text}
+                            </NavDropdown.Item>
+                        ))}
+                    </NavDropdown>
+                </div>
+            </div>
             <div className="nav-buttons-wraper d-flex align-items-center">
                 {/* <NavLink className="nav-icon-wraper home-icon" to='/'>
                     <FiHome />

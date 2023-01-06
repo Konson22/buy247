@@ -1,75 +1,52 @@
 header {
-  padding: 0.5rem;
-  display: flex;
-}
-header .hero-container {
-  padding: 0 4rem;
-  flex: 1;
-  height: 26.5rem;
-  background-color: var(--gray);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../../assets/images/bck-5.jpg");
+  padding: 3rem 6%;
+  background-image: linear-gradient(to right, rgb(27, 93, 216), rgb(17, 203, 209));
   background-size: 100% 100%;
+  display: flex;
+  align-items: center;
 }
-header .hero-container .hero-content h1 {
+header .header-hero {
+  flex: 1;
+}
+header .header-hero h1 {
   color: var(--white);
   font-size: 3rem;
 }
-header .hero-container .hero-content .header-button {
+header .header-hero .header-button {
   padding: 0.9rem 1.3rem !important;
   margin-right: 0.8rem;
   background-color: var(--bg-main) !important;
   text-decoration: none;
 }
-header .hero-container .search-container {
-  margin-top: 1.7rem;
-  height: 3.5rem;
-  background-color: var(--white);
-}
-header .hero-container .search-container input, header .hero-container .search-container button {
-  height: 100%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-}
-header .hero-container .search-container input {
-  padding: 0.6rem;
-  flex: 1;
-}
-header .hero-container .search-container button {
-  padding: 0 1rem;
-  color: var(--white);
-  background-color: var(--bg-main);
-}
-header .categories-container {
-  margin-left: 0.5rem;
-  flex-basis: 40%;
+header .header-categories {
+  margin-left: 2.5rem;
+  flex-basis: 44%;
   display: grid;
   grid-gap: 0.5rem;
   grid-template-columns: repeat(3, 1fr);
 }
-header .categories-container .category-content {
-  height: 13rem;
-  color: #fff;
+header .header-categories .category-card {
+  height: 9rem;
+  border-radius: 7px;
+  overflow: hidden;
+  background-color: rgb(221, 221, 221);
   position: relative;
-  background-color: var(--gray);
-  text-decoration: none;
 }
-header .categories-container .category-image-bg {
-  height: 100%;
+header .header-categories .category-card img, header .header-categories .category-card .category-card-text {
+  text-decoration: none;
   width: 100%;
+  height: 100%;
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
 }
-header .categories-container .category-card-text {
+header .header-categories .category-card .category-card-text {
+  padding: 0.5rem;
   display: flex;
   align-items: flex-end;
-  background-color: rgba(0, 0, 0, 0.1333333333);
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  color: var(--white);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.274), rgba(0, 0, 0, 0.096));
+  z-index: 2;
 }
 
 /********************************************************************
@@ -82,8 +59,16 @@ header .categories-container .category-card-text {
 .section-title {
   margin-bottom: 1.5rem;
 }
-.section-title h1 {
+.section-title h1, .section-title h2 {
   margin: 0;
+}
+.section-title .sun-nav-link {
+  padding: 0 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+.section-title .chevron-icon {
+  margin-left: 0.5rem;
 }
 
 /********************************************************************
@@ -159,32 +144,27 @@ header .categories-container .category-card-text {
 @media screen and (max-width: 950px) {
   header {
     padding: 0;
+    background-image: none;
     display: block;
   }
-  header .hero-container {
-    padding: 4rem 1rem;
-    height: auto;
+  header .header-hero {
+    padding: 3rem 1rem;
+    background-image: linear-gradient(to right, rgb(27, 93, 216), rgb(17, 203, 209));
+    background-size: 100% 100%;
   }
-  header .hero-container .hero-content {
-    width: 100%;
+  header .header-hero h1 {
+    font-size: 1.6rem;
   }
-  header .hero-container .hero-content h1 {
-    font-size: 2.1rem;
+  header .header-hero .header-button {
+    padding: 0.3rem 0.6rem !important;
+    margin: 0.3rem;
   }
-  header .hero-container .hero-content .header-button {
-    padding: 0.5rem 0.6rem !important;
-    margin: 0 0.4rem;
-  }
-  header .categories-container {
-    padding: 0.5rem;
+  header .header-categories {
     margin: 0;
-    width: 100%;
-    grid-gap: 0.5rem;
-    grid-template-columns: repeat(3, 1fr);
+    padding: 0.5rem;
   }
-  header .categories-container .category-content {
-    height: 5.6rem;
-    border-radius: 5px;
+  header .header-categories .category-card {
+    height: 5.5rem;
   }
   /********************************************************************
       ******* FEATURE STYLE *******
@@ -196,7 +176,8 @@ header .categories-container .category-card-text {
     margin-bottom: 0.8rem;
   }
   .section-title h1 {
-    font-size: 1.7rem;
+    margin: 0;
+    font-size: 1.4rem;
   }
   /********************************************************************
       ******* FEATURE STYLE *******
@@ -215,24 +196,6 @@ header .categories-container .category-card-text {
   /********************************************************************
       ******* FEATUREED PRODUCTS STYLE *******
   ********************************************************************/
-  .featured-products {
-    padding: 0 0.3rem;
-    flex-direction: column;
-  }
-  .featured-products__sidebar {
-    margin: 0.5rem 0 0 0;
-    width: 100%;
-  }
-  .featured-products__sidebar .sidebar-content {
-    padding: 0;
-    background-color: var(--white);
-  }
-  .featured-products__body {
-    flex: 1;
-  }
-  .featured-products__body .content {
-    margin-bottom: 1rem;
-  }
   .top-saler-content {
     padding: 1rem 0.5rem;
     background-color: var(--white);

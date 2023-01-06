@@ -2,6 +2,7 @@ footer {
   padding: 0 8%;
   color: var(--white);
   background-color: var(--bg-main);
+  background-image: linear-gradient(to right, rgb(27, 93, 216), rgb(17, 203, 209));
 }
 footer h3, footer h4, footer h5 {
   color: var(--white);

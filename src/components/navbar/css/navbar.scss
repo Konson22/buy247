@@ -51,6 +51,29 @@
     }
 }
 
+
+.search-container{
+    margin-right:1rem;
+    .search-bar{
+        height:3rem;
+        background-color: var(--white);
+        input,button{
+            height:100%;
+            border:none;
+            outline: none;
+            background-color: var(--white);
+        }
+        input{
+            flex:1;
+        }
+    }
+    
+    .categories{
+        height:3rem;
+        background-color: var(--white);
+    }
+}
+
 .nav-buttons-wraper{
     .nav-icon-wraper{
         margin-left: 1rem;

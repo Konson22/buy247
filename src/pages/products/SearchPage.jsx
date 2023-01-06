@@ -1,7 +1,7 @@
 import { useItems } from "../../contexts/ItemsContextProvider"
 import SearchBar from "../../components/SearchBar"
 import { useLocation, Link } from 'react-router-dom'
-import { categDt } from '../../assets/data'
+import { categories } from '../../assets/data'
 import Items from "../../components/Items"
 import { NavDropdown } from 'react-bootstrap'
 import { useState } from 'react'
@@ -30,7 +30,7 @@ export default function SearchPage(){
                             <NavDropdown.Item className=''>
                                 <Link className='nav-link text-dark py-1' to='/products/all'>All categories</Link>
                             </NavDropdown.Item>
-                            {categDt.map((link, index) => (
+                            {categories.map((link, index) => (
                                 <NavDropdown.Item key={link.url}>
                                     <Link className='nav-link text-dark py-1' to={`/products/${link.url}`}>{link.text}</Link>
                                 </NavDropdown.Item>

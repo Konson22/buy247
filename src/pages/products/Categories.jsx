@@ -1,7 +1,7 @@
 import { useItems } from "../../contexts/ItemsContextProvider"
 import { FaSearch } from "react-icons/fa";
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { categDt } from '../../assets/data'
+import { categories } from '../../assets/data'
 import Items from "../../components/Items"
 import { NavDropdown } from 'react-bootstrap'
 import { useRef } from 'react'
@@ -23,7 +23,7 @@ export default function Categories(){
 
     const categoryList = category.split('&')
 
-    const subcategory = categDt.find(c => c.url === categoryList[0])?.subcategory
+    const subcategory = categories.find(c => c.url === categoryList[0])?.subcategory
     
 
     // const searchResults = items.filter(item => item.title.toLowerCase().includes(queryString.toLowerCase()))
@@ -58,7 +58,7 @@ export default function Categories(){
                             <NavDropdown.Item className=''>
                                 <Link className='nav-link text-dark py-1' to='/products/all'>All categories</Link>
                             </NavDropdown.Item>
-                            {categDt.map((link, index) => (
+                            {categories.map((link, index) => (
                                 <NavDropdown.Item key={link.url}>
                                     <Link className='nav-link text-dark py-1' to={`/products/${link.url}`}>{link.text}</Link>
                                 </NavDropdown.Item>

@@ -13,9 +13,9 @@
 
 
 :root{
-    --bg-main:rgb(51, 66, 109);
-    --bg-light:rgb(84, 104, 161);
-    --secondary: rgb(196, 216, 15);
+    --bg-main:rgb(247, 156, 52);
+    --bg-light:rgb(236, 163, 5);
+    --secondary: rgb(236, 163, 5);
     --gray:#eee;
     --white:#fff;
 }
@@ -23,7 +23,6 @@
 body{
     font-family: 'SignikaNegative';
     color: rgb(139, 138, 138);
-    font-size: 1.2rem;
 }
 img{
     width:100%;
@@ -39,6 +38,7 @@ h1,h2,h3,h4,h5,h6{
 
 p{
     margin-top: 0;
+    font-size: 1.2rem;
 }
 
 .btn{

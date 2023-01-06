@@ -51,6 +51,27 @@
   padding: 0 1rem;
 }
 
+.search-container {
+  margin-right: 1rem;
+}
+.search-container .search-bar {
+  height: 3rem;
+  background-color: var(--white);
+}
+.search-container .search-bar input, .search-container .search-bar button {
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--white);
+}
+.search-container .search-bar input {
+  flex: 1;
+}
+.search-container .categories {
+  height: 3rem;
+  background-color: var(--white);
+}
+
 .nav-buttons-wraper .nav-icon-wraper {
   margin-left: 1rem;
 }
