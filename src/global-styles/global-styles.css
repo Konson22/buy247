@@ -11,7 +11,8 @@
   src: url("../assets/fonts/Southmore.ttf");
 }
 :root {
-  --bg-main:rgb(247, 156, 52);
+  --bg-main:rgb(17, 38, 78);
+  --bg-light:rgb(82, 122, 196);
   --bg-light:rgb(236, 163, 5);
   --secondary: rgb(236, 163, 5);
   --gray:#eee;
@@ -109,7 +110,7 @@ p {
 
 .item-card-btn {
   color: var(--white);
-  background-color: var(--bg-main) !important;
+  background-color: var(--bg-light) !important;
   border: none;
 }
 
@@ -185,8 +186,7 @@ p {
   }
   .item-card-btn {
     padding: 0.3rem 0.6rem !important;
-    color: var(--bg-main);
-    background-color: var(--white) !important;
+    color: var(--white);
     border: 1px solid var(--bg-light) !important;
   }
   .items-wraper.col4, .items-wraper.col5 {

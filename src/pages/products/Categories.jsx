@@ -23,7 +23,7 @@ export default function Categories(){
 
     const categoryList = category.split('&')
 
-    const subcategory = categories.find(c => c.url === categoryList[0])?.subcategory
+    // const subcategory = categories.find(c => c.url === categoryList[0])?.subcategory
     
 
     // const searchResults = items.filter(item => item.title.toLowerCase().includes(queryString.toLowerCase()))
@@ -39,13 +39,15 @@ export default function Categories(){
     
 
 
-    const subcategoriesContent = subcategory && (
-        <div className="suncategories-container flex-grow-1 d-flex align-items-center">
-            <Link className='my-link' to={`/products/${categoryList[0]}`}>All</Link>
-            {subcategory.map(subcat => (
-                <Link className='my-link' key={subcat} to={`/products/${categoryList[0]}&${subcat}`}>{subcat}</Link>
+    const subcategoriesContent = (
+        <ul className="suncategories-container nav flex-grow-1 d-flex align-items-center">
+            <Link className='nav-link' to={`/products/all`}>All</Link>
+            {categories.map(category => (
+                <li className="nav-item">
+                <Link className='nav-link' key={category.url} to={`/products/${category.url}`}>{category.text}</Link>
+                    </li>
             ))}
-        </div>
+        </ul>
     )
     
 
@@ -66,16 +68,16 @@ export default function Categories(){
                         </NavDropdown>
                     </div>
                     <div className="sm-hide flex-grow-1">
-                        {subcategory && subcategoriesContent}
+                        {subcategoriesContent}
                     </div>
                     <form className="search-bar-container d-flex">
                         <input type="search" placeholder='Search...' ref={queryRef} />
                         <button type='submit' onClick={handleSearch}><FaSearch /></button>
                     </form>
                 </div>
-                <div className="lg-hide w-100 mt-3">
+                {/* <div className="lg-hide w-100 mt-3">
                     {subcategoriesContent}
-                </div>
+                </div> */}
             </div>
             <div className="products-wraper">
                 {loading && 'Loading...'}

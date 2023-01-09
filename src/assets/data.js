@@ -91,17 +91,6 @@ export const categories = [
             'Spare parts',
         ]
     },
-    {
-        text:'Auto & spare',
-        url:'cars',
-        image:process.env.PUBLIC_URL+'/images/cars.jpg',
-        subcategory:[
-            'Cars',
-            'Mototcycles',
-            'Bicyle',
-            'Spare parts',
-        ]
-    }
 ]
 
 

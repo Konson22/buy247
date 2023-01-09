@@ -74,7 +74,7 @@ export default function Footer(){
                         </ul>
                     </div>
                 </div>
-                <div className="text-center py-3">
+                <div className="text-center py-1">
                     &copy;Copy right reserved for 2023.
                 </div>
             </div>

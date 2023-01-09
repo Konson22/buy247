@@ -3,7 +3,6 @@ footer{
     padding:0 8%;
     color: var(--white);
     background-color: var(--bg-main);
-    background-image: linear-gradient(to right, rgb(27, 93, 216), rgb(17, 203, 209));
     h3,h4,h5{
         color: var(--white);
     }
@@ -70,7 +69,7 @@ footer{
 @media screen and (max-width: 750px){
 
     footer{
-        padding:2rem 1rem;
+        padding:1rem 1rem;
     }
 
     .footer-top{

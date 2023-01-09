@@ -7,6 +7,7 @@ import { FiMail } from 'react-icons/fi'
 import { LazyImage } from '../../helpers/LazyImage'
 import { useEffect, useState } from 'react'
 import TopSallers from '../home/TopSallers'
+import { useNavigate } from 'react-router-dom'
 import './css/products.css'
 
 export default function ProductDetail(){
@@ -15,7 +16,7 @@ export default function ProductDetail(){
     const { loading, items } = useItems()
     const [ selectedItem, setSelectedItem ] = useState(null)
     const [ relatedItems, setRelatedItems ] = useState([])
-    
+    const navigate = useNavigate()
    
     useEffect(() => {
         if(!loading && items.length >= 1){
@@ -34,6 +35,7 @@ export default function ProductDetail(){
             <div className="products-content details">
                 {selectedItem && 
                     <div className="detail-container">
+                        <span className="close-btn d-flex align-items-center justify-content-center rounded-circle" onClick={() => navigate(-1)} >x</span>
                         <div className="detail-image">
                             <LazyImage src={selectedItem.thumbnail} alt='' />
                             {/* <LazyImage src={process.env.PUBLIC_URL+'/images/fashion.jpg'} alt='' /> */}
