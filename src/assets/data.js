@@ -1,106 +1,79 @@
 
-
-export const categories = [
+export const categories2 = [
     {
-        text:'Electronics',
-        url:'electronics',
-        image:process.env.PUBLIC_URL+'/images/electronics.jpg',
-        subcategory:[
-            'Phone',
-            'laptops',
-            'Camera',
-            'printers',
-            'Accessories',
-            'Heater',
-        ]
+        title:'Electronics',
+        path:'electronics',
+        image:process.env.PUBLIC_URL+'/images/electronics.jpg'
     },
     {
-        text:'Fashion',
-        url:'fashion',
-        image:process.env.PUBLIC_URL+'/images/fashion.jpg',
-        subcategory:[
-            'Cloths',
-            'Watch',
-            'Chose',
-            'Eye Glasses',
-            'Rings',
-            'Belt',
-            'Chains',
-        ]
+        title:'Smart phones',
+        path:'smartphones',
+        image:process.env.PUBLIC_URL+'/images/smartphone.jpg'
     },
     {
-        text:'Jewlary',
-        url:'jewlary',
-        image:process.env.PUBLIC_URL+'/images/jewelary.jpg',
-        subcategory:[
-            'Cloths',
-            'Watch',
-            'Chose',
-            'Eye Glasses',
-            'Rings',
-            'Belt',
-            'Chains',
-        ]
+        title:'laptops',
+        path:'laptops',
+        image:process.env.PUBLIC_URL+'/images/laptop.jpg'
     },
     {
-        text:'Health & Beauty',
-        url:'skincare',
+        title:'Fragrances',
+        path:'fragrances',
+        image:process.env.PUBLIC_URL+'/images/photo-1522771739844-6a9f6d5f14af.jpg'
+    },
+    {
+        title:'Health & Beauty',
+        path:'skincare',
         image:process.env.PUBLIC_URL+'/images/skincare.jpg'
     },
     {
-        text:'Home & Decore',
-        url:'home-kitchen',
-        image:process.env.PUBLIC_URL+'/images/home-kitchen.jpg',
-        subcategory:[
-            'Beds',
-            'Tables',
-            'Sofa set',
-            'Lights',
-        ]
+        title:'Home decoration',
+        path:'home-decoration',
+        image:process.env.PUBLIC_URL+'/images/kitchen-1940174__340.jpg'
     },
     {
-        text:'Auto & spare',
-        url:'cars',
-        image:process.env.PUBLIC_URL+'/images/cars.jpg',
-        subcategory:[
-            'Cars',
-            'Mototcycles',
-            'Bicyle',
-            'Spare parts',
-        ]
+        title:'Groceries',
+        path:'groceries',
+        image:process.env.PUBLIC_URL+'/images/pexels-huy-phan-2015876.jpg'
     },
     {
-        text:'Home & Decore',
-        url:'home-kitchen',
-        image:process.env.PUBLIC_URL+'/images/home-kitchen.jpg',
-        subcategory:[
-            'Beds',
-            'Tables',
-            'Sofa set',
-            'Lights',
-        ]
-    },
-    {
-        text:'Auto & spare',
-        url:'cars',
-        image:process.env.PUBLIC_URL+'/images/cars.jpg',
-        subcategory:[
-            'Cars',
-            'Mototcycles',
-            'Bicyle',
-            'Spare parts',
-        ]
+        title:'Jewelary',
+        path:'jewelary',
+        image:process.env.PUBLIC_URL+'/images/jewelary.jpg'
     },
 ]
 
 
-/*
-Women's Clothing And Accessories
-Antiques
-Men's Clothing
-Sporting Goods
-Books
-Home & Kitchen
-Children's Clothing
-Collectibles
-*/
+export const categories = [
+    {
+        title:'Electronics',
+        image:process.env.PUBLIC_URL+'/images/electronics.jpg'
+    },
+    {
+        title:'Smart phone',
+        image:process.env.PUBLIC_URL+'/images/smartphone.jpg'
+    },
+    {
+        title:'Jewelary',
+        image:process.env.PUBLIC_URL+'/images/jewelary.jpg'
+    },
+    {
+        title:'Properties',
+        image:process.env.PUBLIC_URL+'/images/pexels-binyamin-mellish-106399.jpg'
+    },
+    {
+        title:'Health & Beayty',
+        image:process.env.PUBLIC_URL+'/images/skincare.jpg'
+    },
+    {
+        title:'Laptops',
+        image:process.env.PUBLIC_URL+'/images/laptop.jpg'
+    },
+    {
+        title:'Cars',
+        image:process.env.PUBLIC_URL+'/images/cars.jpg'
+    },
+    {
+        title:'Home & Kitchen',
+        image:process.env.PUBLIC_URL+'/images/kitchen-1940174__340.jpg'
+    },
+]

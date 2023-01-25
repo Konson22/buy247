@@ -1,3 +1,45 @@
+import { FaTimes } from "react-icons/fa"
+import { useGlobalContext } from "../../contexts/GlobalContextProvider"
+
+export default function Upload() {
+
+  const { setOpenModal } = useGlobalContext()
+
+  return (
+    <div className='md:w-[30%] w-full md:p-6 p-4 m-4 rounded bg-white relative' onClick={e => e.stopPropagation()}>
+        <div className="absolute right-2 top-2" onClick={() => setOpenModal(null)}>
+            <FaTimes className='' />
+        </div>
+        <h1 className="text-xl font-bold">Upload</h1>
+        <span className="text-xl font-bold text-red-400">work still on progress...</span>
+        <form className='mt-4'>
+            <div className="mb-3">
+                <label htmlFor='title'>Title</label>
+                <input className='h-10 bg-gray-100 focus:border-none focus:outline-none bg-transparent w-full border-none' />
+            </div>
+            <div className="mb-3">
+                <label htmlFor='title'>Price</label>
+                <input className='h-10 bg-gray-100 focus:border-none focus:outline-none bg-transparent w-full border-none' />
+            </div>
+            <div className="mb-3">
+                <label htmlFor='title'>Address</label>
+                <input className='h-10 bg-gray-100 focus:border-none focus:outline-none bg-transparent w-full border-none' />
+            </div>
+            <div className="mb-3">
+                <label htmlFor='title'>Disciption</label>
+                <input className='h-16 bg-gray-100 focus:border-none focus:outline-none bg-transparent w-full border-none' />
+            </div>
+            <div className="flex mt-6">
+                <button className="px-3 py-2 rounded border-none bg-green-700 mr-3 text-white">Submit</button>
+                <button className="px-3 py-2 rounded border-none bg-red-700 text-white">Cancel</button>
+            </div>
+        </form>
+    </div>
+  )
+}
+
+
+/*
 import { useState } from 'react'
 import { categories } from '../../assets/data'
 import { FaRegImages } from 'react-icons/fa'
@@ -78,7 +120,6 @@ export default function Upload(){
                             ))}
                         </select>
                     </div>
-                    {/* subcategry */}
                     <div className='input-container col-md-4'>
                         <label>Sub category</label>
                         <select name='sub_category'>
@@ -89,12 +130,10 @@ export default function Upload(){
                             }
                         </select>
                     </div>
-                    {/* Set price */}
                     <div className='input-container col-md-4'>
                         <label htmlFor="price">Set Price</label>
                         <input name='price' type="text" placeholder='Price' />
                     </div>
-                    {/* Currency */}
                     <div className='input-container col-md-4'>
                         <label htmlFor="currency">Currency</label>
                         <select name='currency'>
@@ -103,7 +142,6 @@ export default function Upload(){
                             <option value='UGX'>UGX</option>
                         </select>
                     </div>
-                    {/*  description */}
                     <div className='input-container'>
                         <label htmlFor="description">Description</label>
                         <textarea name='description' placeholder='Description...' ></textarea>
@@ -137,3 +175,4 @@ function UploadLoader({percentage}){
         </div>
     )
 }
+*/

@@ -14,7 +14,7 @@ export default function GlobalContextProvider({children}) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [profile, setProfile] = useState(null)
-  const [showForm, setShowForm] = useState(null)
+  const [openModal, setOpenModal] = useState(null)
     
   useEffect(() => {
     setLoading(false)
@@ -23,7 +23,7 @@ export default function GlobalContextProvider({children}) {
 
 
   return (
-    <apiContext.Provider value={{ loading, error, profile, showForm, setProfile, setShowForm }}>
+    <apiContext.Provider value={{ loading, error, profile, openModal, setProfile, setOpenModal }}>
       {children}
     </apiContext.Provider>
   )

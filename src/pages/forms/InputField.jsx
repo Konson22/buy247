@@ -6,10 +6,10 @@ export default function InputField({label, key='', ...props}){
     const [field, meta] = useField(props)
 
     return(
-        <div className="input-container" key={key}>
+        <div className="bg-gray-100" key={key}>
             <label htmlFor={label}>{label}</label>
             <input
-                className={(meta.touched && meta.error) ? 'has-error' : '' }
+                className={`focus:border-none focus:outline-none bg-transparent w-full border-none ${(meta.touched && meta.error) ? '':''}`}
                 {...field}
                 placeholder={field.placeholder}
                 {...props}

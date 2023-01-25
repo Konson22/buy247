@@ -1,23 +1,27 @@
-import { Link } from 'react-router-dom'
-import { useGlobalContext } from "../../contexts/GlobalContextProvider";
-
+import { Link } from "react-router-dom"
+import { useGlobalContext } from "../../contexts/GlobalContextProvider"
 
 export default function Header() {
 
-  const { setShowForm } = useGlobalContext()
-  
+  const { setOpenModal } = useGlobalContext()
 
   return (
-    <header>
-      <div className='header-hero'>
-        <h1 className='sm-hide'>There’s nothing quite like the thrill of finding a great bargain</h1>
-        <h1 className='lg-hide'>All items, every day, are better than before</h1>
-        <div className='d-flex align-items-center mt-3'>
-          <Link className='header-button btn text-white' to='/products/all'>Start Shopping</Link>
-          <button className='header-button btn text-white sm-hide' onClick={() => setShowForm('upload')}>Start Salling</button>
-          <Link className='header-button btn text-white lg-hide' to='/upload'>Start Salling</Link>
+    <div className='header md:h-[60vh] h-[30vh] flex items-center bg-gray-200 md:px-[6%] px-3'>
+      <div className='header-hero md:w-[55%] w-full text-white'>
+        <h1 className='hidden md:text-5xl text-2xl font-bold'>There’s nothing quite like the thrill of finding a great bargain</h1>
+        <h1 className='md:text-6xl text-2xl font-bold'>All items, every day, are better than before</h1>
+        <p className="text-2xl mt-3 font-semibold hidden md:block">Join million of shoppers and be one of our customers There’s nothing quite like the thrill of finding a great bargain</p>
+        <div className='flex items-center md:mt-8 mt-4'>
+          <Link className='md:px-4 md:py-3 px-3 py-2 bg-red-600 rounded mr-3' to='/products'>Start Shopping</Link>
+          <div 
+            className='md:px-4 md:py-3 px-3 py-2 bg-red-600 rounded' 
+            onClick={() => setOpenModal('upload')}
+          >
+            Start Salling
+          </div>
         </div>
       </div>
-    </header>
+    </div>
   )
 }
+  
